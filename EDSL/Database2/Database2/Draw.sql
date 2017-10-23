@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[Draw]
+(
+	[drawID] NVARCHAR(50) NOT NULL PRIMARY KEY
+)
