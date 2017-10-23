@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EDSL_Admin"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        WindowState="Maximized"
+        Title="MainWindow" Height="1000" Width="1920">
     <Grid>
         
     </Grid>

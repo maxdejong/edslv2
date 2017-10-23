@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDSL_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__RefactorLog">
+    <Key>
+      <PropertyRef Name="OperationKey" />
+    </Key>
+    <Property Name="OperationKey" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="breakDate">
+    <Key>
+      <PropertyRef Name="breakID" />
+    </Key>
+    <Property Name="breakID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="seasonPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="breakDate1" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Club">
+    <Key>
+      <PropertyRef Name="clubID" />
+    </Key>
+    <Property Name="clubID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="clubName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="firstRegistered" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="contactID" />
+    </Key>
+    <Property Name="contactID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="postcode" Type="Int32" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="divID" />
+    </Key>
+    <Property Name="divID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="leaguePID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="divCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ageLimit" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Draw">
+    <Key>
+      <PropertyRef Name="drawID" />
+    </Key>
+    <Property Name="drawID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="seasonPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="divisionPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Leauge">
+    <Key>
+      <PropertyRef Name="leagueID" />
+    </Key>
+    <Property Name="leagueID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="leagueName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="groundID" />
+    </Key>
+    <Property Name="groundID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="groundName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addressLine1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addressLine2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="postCode" Type="Int32" Nullable="false" />
+    <Property Name="suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="homeClub" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="matchID" />
+    </Key>
+    <Property Name="matchID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="roundPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="homeTeam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="awayTeam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="homeGoal" Type="Int32" />
+    <Property Name="awayGoal" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="playerID" />
+    </Key>
+    <Property Name="playerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="teamPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="eContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="firstRegistered" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Round">
+    <Key>
+      <PropertyRef Name="roundID" />
+    </Key>
+    <Property Name="roundID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="drawPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Season">
+    <Key>
+      <PropertyRef Name="seasonID" />
+    </Key>
+    <Property Name="seasonID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="leaguePID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="seasonYear" Type="Int32" Nullable="false" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="teamID" />
+    </Key>
+    <Property Name="teamID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="clubPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="teamName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="contact" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EDSL_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
+    <EntitySet Name="breakDates" EntityType="Self.breakDate" />
+    <EntitySet Name="Clubs" EntityType="Self.Club" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="Divisions" EntityType="Self.Division" />
+    <EntitySet Name="Draws" EntityType="Self.Draw" />
+    <EntitySet Name="Leauges" EntityType="Self.Leauge" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="Matches" EntityType="Self.Match" />
+    <EntitySet Name="Players" EntityType="Self.Player" />
+    <EntitySet Name="Rounds" EntityType="Self.Round" />
+    <EntitySet Name="Seasons" EntityType="Self.Season" />
+    <EntitySet Name="Teams" EntityType="Self.Team" />
+  </EntityContainer>
+</Schema>

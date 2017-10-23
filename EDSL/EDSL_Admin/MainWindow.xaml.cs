@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EDSL_Admin.Views;
 
 namespace EDSL_Admin
 {
@@ -20,9 +21,12 @@ namespace EDSL_Admin
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow reff;
         public MainWindow()
         {
             InitializeComponent();
+            this.Content = new LoginScreen();
+            reff = this;
         }
     }
 }

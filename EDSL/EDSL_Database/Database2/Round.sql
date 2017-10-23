@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Round]
+(
+	[roundID] NVARCHAR(50) NOT NULL PRIMARY KEY, 
+	[drawPID] NVARCHAR(50) NOT NULL,
+    [date] DATE NULL
+)

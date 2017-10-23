@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Team]
+(
+	[teamID] NVARCHAR(50) NOT NULL PRIMARY KEY,
+	[clubPID] NVARCHAR(50) NOT NULL,
+    [teamName] NVARCHAR(50) NOT NULL,
+	[contact] INT NOT NULL
+)

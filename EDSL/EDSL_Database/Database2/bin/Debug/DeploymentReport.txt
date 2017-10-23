@@ -1,0 +1,26 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[breakDate] (Table)
+       [dbo].[Club] (Table)
+       [dbo].[Contact] (Table)
+       [dbo].[Division] (Table)
+       [dbo].[Draw] (Table)
+       [dbo].[Leauge] (Table)
+       [dbo].[Location] (Table)
+       [dbo].[Match] (Table)
+       [dbo].[Player] (Table)
+       [dbo].[Round] (Table)
+       [dbo].[Season] (Table)
+       [dbo].[Team] (Table)
+
+** Supporting actions
