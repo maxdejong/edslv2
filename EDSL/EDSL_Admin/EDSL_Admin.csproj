@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\DivisionsView.xaml.cs">
+      <DependentUpon>DivisionsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EDSLToolbox.xaml.cs">
       <DependentUpon>EDSLToolbox.xaml</DependentUpon>
     </Compile>
@@ -63,8 +66,17 @@
     <Compile Include="Views\LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PlayersView.xaml.cs">
+      <DependentUpon>PlayersView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SeasonList.xaml.cs">
       <DependentUpon>SeasonList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeamsClubsView.xaml.cs">
+      <DependentUpon>TeamsClubsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeamsView.xaml.cs">
+      <DependentUpon>TeamsView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +90,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\DivisionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EDSLToolbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,7 +106,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PlayersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SeasonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TeamsClubsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TeamsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

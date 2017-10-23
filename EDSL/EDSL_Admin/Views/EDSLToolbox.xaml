@@ -9,11 +9,18 @@
       Title="EDSLToolbox">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Button x:Name="Homebtn" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="80" FontSize="22" Click="Homebtn_Click"/>
         <Frame x:Name="Display" Content="" HorizontalAlignment="Left" Height="920" VerticalAlignment="Bottom" Width="1920" NavigationUIVisibility="Hidden"/>
-        <Label x:Name="Title" Content="Label" HorizontalAlignment="Left" Margin="774,0,0,0" VerticalAlignment="Top" Height="80" Width="298" FontSize="40"/>
+        <Label x:Name="Title" Content="Label" HorizontalAlignment="Left" Margin="593,0,0,0" VerticalAlignment="Top" Height="80" Width="1099" FontSize="40" BorderBrush="White" Background="#FF2F3268" Foreground="White" FontFamily="Arial"/>
         <Button x:Name="SeasonBtn" Content="Season" HorizontalAlignment="Left" Margin="119,0,0,0" VerticalAlignment="Top" Width="119" Height="80" FontSize="22" Click="SeasonBtn_Click"/>
-        <Button x:Name="ClubTeamBtn" Content="Club/Team" HorizontalAlignment="Left" Margin="238,0,0,0" VerticalAlignment="Top" Width="119" Height="80" FontSize="22"/>
+        <Button x:Name="ClubTeamBtn" Content="Club/Team" HorizontalAlignment="Left" Margin="238,0,0,0" VerticalAlignment="Top" Width="119" Height="80" FontSize="22" Click="ClubTeamBtn_Click"/>
+        <Button Content="Players" HorizontalAlignment="Left" Margin="357,0,0,0" VerticalAlignment="Top" Width="118" Height="80" Click="Button_Click" FontSize="22"/>
+        <Button Content="Divisions&#xD;&#xA;/Draws" HorizontalAlignment="Left" Margin="475,0,0,0" VerticalAlignment="Top" Width="118" Height="80" FontSize="22" Click="Button_Click_1"/>
+        <Button Content="Reports" HorizontalAlignment="Left" Margin="1692,0,0,0" VerticalAlignment="Top" Width="115" Height="80" FontSize="22"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="1807,0,0,0" VerticalAlignment="Top" Width="113" Height="80" FontSize="22"/>
 
     </Grid>
 </Page>

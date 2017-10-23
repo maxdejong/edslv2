@@ -1,0 +1,25 @@
+﻿<Page x:Class="EDSL_Admin.Views.DivisionsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EDSL_Admin.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="920" d:DesignWidth="1920"
+      Title="DivisionsView">
+
+    <Grid>
+        <ListView HorizontalAlignment="Left" Height="630" Margin="860,66,0,0" VerticalAlignment="Top" Width="956">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="960,718,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="860,718,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+        <Button Content="View teams in division" HorizontalAlignment="Left" Margin="542,66,0,0" VerticalAlignment="Top" Width="270" RenderTransformOrigin="0.48,0.7" IsEnabled="False"/>
+        <Button Content="Generate/View Draw for selected division" HorizontalAlignment="Left" Margin="542,132,0,0" VerticalAlignment="Top" Width="270" IsEnabled="False"/>
+
+    </Grid>
+</Page>

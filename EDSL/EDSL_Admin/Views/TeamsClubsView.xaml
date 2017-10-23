@@ -1,0 +1,25 @@
+﻿<Page x:Class="EDSL_Admin.Views.TeamsClubsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EDSL_Admin.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="920" d:DesignWidth="1920"
+      Title="TeamsClubsView">
+
+    <Grid>
+        <ListView HorizontalAlignment="Left" Height="624" Margin="638,66,0,0" VerticalAlignment="Top" Width="1222">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="1360,744,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="1474,744,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+        <Button Content="View Teams for selected club" HorizontalAlignment="Left" Margin="144,92,0,0" VerticalAlignment="Top" Width="294" IsEnabled="False"/>
+        <Button x:Name="AllTeamsbtn" Content="View all teams" HorizontalAlignment="Left" Margin="144,158,0,0" VerticalAlignment="Top" Width="294" Click="AllTeamsbtn_Click"/>
+
+    </Grid>
+</Page>

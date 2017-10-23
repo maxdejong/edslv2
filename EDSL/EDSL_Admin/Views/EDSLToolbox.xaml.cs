@@ -20,11 +20,14 @@ namespace EDSL_Admin.Views
     /// </summary>
     public partial class EDSLToolbox : Page
     {
+        public static EDSLToolbox Reff;
+
         public EDSLToolbox()
         {
             InitializeComponent();
             Title.Content = "Home";
             Display.Navigate(new HomePage());
+            Reff = this;
         }
 
         private void Homebtn_Click(object sender, RoutedEventArgs e)
@@ -37,6 +40,24 @@ namespace EDSL_Admin.Views
         {
             Title.Content = "Season";
             Display.Navigate(new Season());
+        }
+
+        private void ClubTeamBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Title.Content = "Clubs";
+            Display.Navigate(new TeamsClubsView());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Title.Content = "Players";
+            Display.Navigate(new PlayersView());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Title.Content = "Divisions";
+            Display.Navigate(new DivisionsView());
         }
     }
 }
