@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 H:\edslv2\EDSL\EDSL_Admin\App.xaml
-9-514904790
+10-1254229270
 
-17-1723164281
+18-1280628577
 131569487696
-MainWindow.xaml;Views\DivisionsView.xaml;Views\EDSLToolbox.xaml;Views\HomePage.xaml;Views\LoginScreen.xaml;Views\PlayersView.xaml;Views\SeasonList.xaml;Views\TeamsClubsView.xaml;Views\TeamsView.xaml;
+MainWindow.xaml;Views\DivisionsView.xaml;Views\EDSLToolbox.xaml;Views\HomePage.xaml;Views\LoginScreen.xaml;Views\PlayersView.xaml;Views\SeasonAddEdit.xaml;Views\SeasonList.xaml;Views\TeamsClubsView.xaml;Views\TeamsView.xaml;
 
-True
+False
 

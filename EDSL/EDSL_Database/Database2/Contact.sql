@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Contact]
 (
-	[contactID] NVARCHAR(50) NOT NULL PRIMARY KEY, 
+	[contactID] int NOT NULL PRIMARY KEY, 
     [fName] NVARCHAR(50) NOT NULL, 
     [lName] NVARCHAR(50) NOT NULL, 
     [gender] NVARCHAR(50) NOT NULL, 
@@ -11,6 +11,4 @@
 	[suburb] NVARCHAR(50) NOT NULL,
     [phone] NVARCHAR(50) NOT NULL, 
     [email] NVARCHAR(50) NULL,
-	[age] int NOT NULL,
-	[birthDate] date not null,
 )

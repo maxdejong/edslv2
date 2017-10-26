@@ -24,5 +24,11 @@ namespace EDSL_Admin.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EDSLToolbox.Reff.Title.Content = "Add Season";
+            EDSLToolbox.Reff.Display.Content = new SeasonAddEdit();
+        }
     }
 }

@@ -83,3 +83,5 @@ H:\edslv2\EDSL\EDSL_Admin\obj\Debug\EDSL_Admin.csproj.GenerateResource.Cache
 H:\edslv2\EDSL\EDSL_Admin\obj\Debug\EDSL_Admin.csproj.CoreCompileInputs.cache
 H:\edslv2\EDSL\EDSL_Admin\obj\Debug\EDSL_Admin.exe
 H:\edslv2\EDSL\EDSL_Admin\obj\Debug\EDSL_Admin.pdb
+H:\edslv2\EDSL\EDSL_Admin\obj\Debug\Views\SeasonAddEdit.g.cs
+H:\edslv2\EDSL\EDSL_Admin\obj\Debug\Views\SeasonAddEdit.baml

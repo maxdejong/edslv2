@@ -69,6 +69,9 @@
     <Compile Include="Views\PlayersView.xaml.cs">
       <DependentUpon>PlayersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SeasonAddEdit.xaml.cs">
+      <DependentUpon>SeasonAddEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SeasonList.xaml.cs">
       <DependentUpon>SeasonList.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PlayersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SeasonAddEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
