@@ -8,3 +8,8 @@ C:\Users\maxde\Documents\GitHub\edslv2\EDSL\EDSL_Database\Database2\bin\Debug\Da
 C:\Users\maxde\Documents\GitHub\edslv2\EDSL\EDSL_Database\Database2\bin\Debug\Database2.pdb
 C:\Users\maxde\Documents\GitHub\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\Database2.dll
 C:\Users\maxde\Documents\GitHub\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\Database2.pdb
+H:\edslv2\EDSL\EDSL_Database\Database2\bin\Debug\EDSL_Database.dacpac
+H:\edslv2\EDSL\EDSL_Database\Database2\bin\Debug\Database2.dll
+H:\edslv2\EDSL\EDSL_Database\Database2\bin\Debug\Database2.pdb
+H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\Database2.dll
+H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\Database2.pdb
