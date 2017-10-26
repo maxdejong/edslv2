@@ -9,8 +9,22 @@
       Title="SeasonAddEdit">
 
     <Grid>
-        <Label Content="Season year" HorizontalAlignment="Left" Margin="80,58,0,0" VerticalAlignment="Top" Width="86"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Season year:" HorizontalAlignment="Left" Margin="80,58,0,0" VerticalAlignment="Top" Width="86"/>
+        <TextBox x:Name="SeasonYear" HorizontalAlignment="Left" Height="23" Margin="171,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ListView x:Name="BreakDateList" HorizontalAlignment="Left" Height="562" Margin="760,62,0,0" VerticalAlignment="Top" Width="276" SelectionChanged="BreakDateList_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="760,37,0,0" VerticalAlignment="Top" Width="138" Click="Button_Click"/>
+        <Button x:Name="Removebtn" Content="Remove" HorizontalAlignment="Left" Margin="903,37,0,0" VerticalAlignment="Top" Width="133" IsEnabled="False" Click="Button_Click_1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="80,354,0,0" TextWrapping="Wrap" Text="Season length:" VerticalAlignment="Top" Width="86"/>
+        <TextBox x:Name="SeasonLength" HorizontalAlignment="Left" Height="23" Margin="166,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="1781,854,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <DatePicker x:Name="StartDate" HorizontalAlignment="Left" Margin="243,162,0,0" VerticalAlignment="Top" Height="33" Width="195" Text="dasdas"/>
+        <TextBlock HorizontalAlignment="Left" Margin="145,170,0,0" TextWrapping="Wrap" Text="Start date" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

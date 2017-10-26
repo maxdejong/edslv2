@@ -13,3 +13,7 @@ H:\edslv2\EDSL\EDSL_Database\Database2\bin\Debug\Database2.dll
 H:\edslv2\EDSL\EDSL_Database\Database2\bin\Debug\Database2.pdb
 H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\Database2.dll
 H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\Database2.pdb
+H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\Model.xml
+H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\refactor.xml
+H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\postdeploy.sql
+H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\predeploy.sql

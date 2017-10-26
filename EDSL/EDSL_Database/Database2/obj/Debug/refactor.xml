@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0">
+  <Operation Name="Rename Refactor" Key="cf6b3d2c-c135-4bfa-b953-bd4eec968545" ChangeDateTime="10/17/2017 02:53:36" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Leauge].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Leauge]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="leagueID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2c8fee8e-56e4-4b27-b4fa-e5d4222408d6" ChangeDateTime="10/17/2017 02:54:47" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Season].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Season]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="seasID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2700da84-eb64-4d0c-9162-c7884b93c0c3" ChangeDateTime="10/17/2017 02:56:34" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Division].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Division]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="divID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d293ff49-9ca9-41d2-8eed-de3c0c68c5d9" ChangeDateTime="10/17/2017 02:57:27" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Club].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Club]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="clubID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f4d38e5e-2423-439b-bdd6-dd9429e72dbf" ChangeDateTime="10/17/2017 03:01:13" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[breakDate].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[breakDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="breakID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="84d7f630-1802-4ce2-a75d-af62286568a8" ChangeDateTime="10/17/2017 03:03:18" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Draw].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Draw]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="drawID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="47c246ae-b173-4edc-98c5-6cc024c27c8f" ChangeDateTime="10/17/2017 03:03:34" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Location].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Location]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="groupID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cb5e00a8-ed9b-40ab-8043-daf9bf6c467a" ChangeDateTime="10/17/2017 03:05:53" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Team].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Team]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="teamID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f1a7f0b9-8f21-48a1-9496-df86fc9d3dea" ChangeDateTime="10/17/2017 03:07:38" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Round].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Round]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="roundID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2d2d8304-726b-4b2c-b386-5816827e3a04" ChangeDateTime="10/17/2017 03:08:52" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Player].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Player]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="playerC" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f21f8d84-a2b5-4367-9f1a-054e350c930c" ChangeDateTime="10/17/2017 03:09:10" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Player].[playerC]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Player]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="playerID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1221e429-fc7a-415f-ae12-2e259fe90893" ChangeDateTime="10/17/2017 03:09:52" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Match].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Match]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="matchID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7727cd41-d6b9-4328-b89d-109e8a4eae90" ChangeDateTime="10/17/2017 03:10:53" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Contact].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Contact]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="contactID" />
+  </Operation>
+</Operations>
