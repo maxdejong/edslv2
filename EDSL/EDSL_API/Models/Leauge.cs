@@ -14,7 +14,7 @@ namespace EDSL_API.Models
     
     public partial class Leauge
     {
-        public string leagueID { get; set; }
+        public int leagueID { get; set; }
         public string leagueName { get; set; }
     }
 }

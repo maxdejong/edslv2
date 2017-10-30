@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Locations/5
         [ResponseType(typeof(Location))]
-        public IHttpActionResult GetLocation(string id)
+        public IHttpActionResult GetLocation(int id)
         {
             Location location = db.Locations.Find(id);
             if (location == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Locations/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutLocation(string id, Location location)
+        public IHttpActionResult PutLocation(int id, Location location)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Locations/5
         [ResponseType(typeof(Location))]
-        public IHttpActionResult DeleteLocation(string id)
+        public IHttpActionResult DeleteLocation(int id)
         {
             Location location = db.Locations.Find(id);
             if (location == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool LocationExists(string id)
+        private bool LocationExists(int id)
         {
             return db.Locations.Count(e => e.groundID == id) > 0;
         }

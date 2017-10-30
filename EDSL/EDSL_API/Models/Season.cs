@@ -14,9 +14,10 @@ namespace EDSL_API.Models
     
     public partial class Season
     {
-        public string seasonID { get; set; }
-        public string leaguePID { get; set; }
+        public int seasonID { get; set; }
+        public int leaguePID { get; set; }
         public int seasonYear { get; set; }
         public System.DateTime startDate { get; set; }
+        public int length { get; set; }
     }
 }

@@ -14,8 +14,8 @@ namespace EDSL_API.Models
     
     public partial class breakDate
     {
-        public string breakID { get; set; }
-        public string seasonPID { get; set; }
+        public int breakID { get; set; }
+        public int seasonPID { get; set; }
         public Nullable<System.DateTime> breakDate1 { get; set; }
     }
 }

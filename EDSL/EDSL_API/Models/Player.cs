@@ -14,10 +14,12 @@ namespace EDSL_API.Models
     
     public partial class Player
     {
-        public string playerID { get; set; }
-        public string teamPID { get; set; }
+        public int playerID { get; set; }
+        public int teamPID { get; set; }
         public string pContact { get; set; }
         public string eContact { get; set; }
         public Nullable<int> firstRegistered { get; set; }
+        public int age { get; set; }
+        public System.DateTime birthDate { get; set; }
     }
 }

@@ -14,8 +14,8 @@ namespace EDSL_API.Models
     
     public partial class Round
     {
-        public string roundID { get; set; }
-        public string drawPID { get; set; }
+        public int roundID { get; set; }
+        public int drawPID { get; set; }
         public Nullable<System.DateTime> date { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/breakDates/5
         [ResponseType(typeof(breakDate))]
-        public IHttpActionResult GetbreakDate(string id)
+        public IHttpActionResult GetbreakDate(int id)
         {
             breakDate breakDate = db.breakDates.Find(id);
             if (breakDate == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/breakDates/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutbreakDate(string id, breakDate breakDate)
+        public IHttpActionResult PutbreakDate(int id, breakDate breakDate)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/breakDates/5
         [ResponseType(typeof(breakDate))]
-        public IHttpActionResult DeletebreakDate(string id)
+        public IHttpActionResult DeletebreakDate(int id)
         {
             breakDate breakDate = db.breakDates.Find(id);
             if (breakDate == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool breakDateExists(string id)
+        private bool breakDateExists(int id)
         {
             return db.breakDates.Count(e => e.breakID == id) > 0;
         }

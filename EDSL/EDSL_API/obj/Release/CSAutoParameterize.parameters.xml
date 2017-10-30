@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="EDSL_dbEntities-Web.config Connection String" description="EDSL_dbEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.EDSL_DM.csdl|res://*/Models.EDSL_DM.ssdl|res://*/Models.EDSL_DM.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=edsl.database.windows.net;initial catalog=EDSL_db;persist security info=True;user id=EDSL_Admin;password=ProTeam1;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\maxde\\Documents\\GitHub\\edslv2\\EDSL\\EDSL_API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EDSL_dbEntities']/@connectionString" />
-  </parameter>
-</parameters>

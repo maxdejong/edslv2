@@ -14,13 +14,15 @@ namespace EDSL_API.Models
     
     public partial class Contact
     {
-        public string contactID { get; set; }
+        public int contactID { get; set; }
         public string fName { get; set; }
         public string lName { get; set; }
         public string gender { get; set; }
         public string address1 { get; set; }
         public string address2 { get; set; }
         public Nullable<int> postcode { get; set; }
+        public string state { get; set; }
+        public string suburb { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
     }

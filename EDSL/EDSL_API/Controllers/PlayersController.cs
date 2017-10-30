@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Players/5
         [ResponseType(typeof(Player))]
-        public IHttpActionResult GetPlayer(string id)
+        public IHttpActionResult GetPlayer(int id)
         {
             Player player = db.Players.Find(id);
             if (player == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Players/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutPlayer(string id, Player player)
+        public IHttpActionResult PutPlayer(int id, Player player)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Players/5
         [ResponseType(typeof(Player))]
-        public IHttpActionResult DeletePlayer(string id)
+        public IHttpActionResult DeletePlayer(int id)
         {
             Player player = db.Players.Find(id);
             if (player == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool PlayerExists(string id)
+        private bool PlayerExists(int id)
         {
             return db.Players.Count(e => e.playerID == id) > 0;
         }

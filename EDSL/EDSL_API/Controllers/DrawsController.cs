@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Draws/5
         [ResponseType(typeof(Draw))]
-        public IHttpActionResult GetDraw(string id)
+        public IHttpActionResult GetDraw(int id)
         {
             Draw draw = db.Draws.Find(id);
             if (draw == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Draws/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutDraw(string id, Draw draw)
+        public IHttpActionResult PutDraw(int id, Draw draw)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Draws/5
         [ResponseType(typeof(Draw))]
-        public IHttpActionResult DeleteDraw(string id)
+        public IHttpActionResult DeleteDraw(int id)
         {
             Draw draw = db.Draws.Find(id);
             if (draw == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool DrawExists(string id)
+        private bool DrawExists(int id)
         {
             return db.Draws.Count(e => e.drawID == id) > 0;
         }

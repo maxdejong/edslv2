@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Rounds/5
         [ResponseType(typeof(Round))]
-        public IHttpActionResult GetRound(string id)
+        public IHttpActionResult GetRound(int id)
         {
             Round round = db.Rounds.Find(id);
             if (round == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Rounds/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutRound(string id, Round round)
+        public IHttpActionResult PutRound(int id, Round round)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Rounds/5
         [ResponseType(typeof(Round))]
-        public IHttpActionResult DeleteRound(string id)
+        public IHttpActionResult DeleteRound(int id)
         {
             Round round = db.Rounds.Find(id);
             if (round == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool RoundExists(string id)
+        private bool RoundExists(int id)
         {
             return db.Rounds.Count(e => e.roundID == id) > 0;
         }

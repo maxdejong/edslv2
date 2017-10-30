@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Contacts/5
         [ResponseType(typeof(Contact))]
-        public IHttpActionResult GetContact(string id)
+        public IHttpActionResult GetContact(int id)
         {
             Contact contact = db.Contacts.Find(id);
             if (contact == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Contacts/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutContact(string id, Contact contact)
+        public IHttpActionResult PutContact(int id, Contact contact)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Contacts/5
         [ResponseType(typeof(Contact))]
-        public IHttpActionResult DeleteContact(string id)
+        public IHttpActionResult DeleteContact(int id)
         {
             Contact contact = db.Contacts.Find(id);
             if (contact == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ContactExists(string id)
+        private bool ContactExists(int id)
         {
             return db.Contacts.Count(e => e.contactID == id) > 0;
         }

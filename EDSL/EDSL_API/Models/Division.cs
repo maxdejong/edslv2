@@ -14,8 +14,8 @@ namespace EDSL_API.Models
     
     public partial class Division
     {
-        public string divID { get; set; }
-        public string leaguePID { get; set; }
+        public int divID { get; set; }
+        public int leaguePID { get; set; }
         public string divCode { get; set; }
         public Nullable<int> ageLimit { get; set; }
     }

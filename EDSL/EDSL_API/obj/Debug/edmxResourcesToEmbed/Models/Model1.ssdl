@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDSL_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="breakDate">
+    <Key>
+      <PropertyRef Name="breakID" />
+    </Key>
+    <Property Name="breakID" Type="int" Nullable="false" />
+    <Property Name="seasonPID" Type="int" Nullable="false" />
+    <Property Name="breakDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Club">
+    <Key>
+      <PropertyRef Name="clubID" />
+    </Key>
+    <Property Name="clubID" Type="int" Nullable="false" />
+    <Property Name="leaguePID" Type="int" Nullable="false" />
+    <Property Name="clubName" Type="nvarchar" MaxLength="50" />
+    <Property Name="firstRegistered" Type="nvarchar" MaxLength="50" />
+    <Property Name="pContact" Type="int" Nullable="false" />
+    <Property Name="sContact" Type="int" />
+    <Property Name="location" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="contactID" />
+    </Key>
+    <Property Name="contactID" Type="int" Nullable="false" />
+    <Property Name="fName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="address1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="postcode" Type="int" />
+    <Property Name="state" Type="nvarchar" MaxLength="7" Nullable="false" />
+    <Property Name="suburb" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="divID" />
+    </Key>
+    <Property Name="divID" Type="int" Nullable="false" />
+    <Property Name="leaguePID" Type="int" Nullable="false" />
+    <Property Name="divCode" Type="nvarchar" MaxLength="4" />
+    <Property Name="ageLimit" Type="int" />
+  </EntityType>
+  <EntityType Name="Draw">
+    <Key>
+      <PropertyRef Name="drawID" />
+    </Key>
+    <Property Name="drawID" Type="int" Nullable="false" />
+    <Property Name="seasonPID" Type="int" Nullable="false" />
+    <Property Name="divisionPID" Type="int" Nullable="false" />
+    <Property Name="numFinalTeams" Type="int" />
+    <Property Name="finalsDrawPID" Type="int" />
+  </EntityType>
+  <EntityType Name="Leauge">
+    <Key>
+      <PropertyRef Name="leagueID" />
+    </Key>
+    <Property Name="leagueID" Type="int" Nullable="false" />
+    <Property Name="leagueName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="groundID" />
+    </Key>
+    <Property Name="groundID" Type="int" Nullable="false" />
+    <Property Name="groundName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="addressLine1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="addressLine2" Type="nvarchar" MaxLength="50" />
+    <Property Name="postCode" Type="int" Nullable="false" />
+    <Property Name="suburb" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="homeClub" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="matchID" />
+    </Key>
+    <Property Name="matchID" Type="int" Nullable="false" />
+    <Property Name="roundPID" Type="int" Nullable="false" />
+    <Property Name="homeTeam" Type="nvarchar" MaxLength="50" />
+    <Property Name="awayTeam" Type="nvarchar" MaxLength="50" />
+    <Property Name="homeGoal" Type="int" />
+    <Property Name="awayGoal" Type="int" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="playerID" />
+    </Key>
+    <Property Name="playerID" Type="int" Nullable="false" />
+    <Property Name="teamPID" Type="int" Nullable="false" />
+    <Property Name="pContact" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="eContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="firstRegistered" Type="int" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="birthDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Round">
+    <Key>
+      <PropertyRef Name="roundID" />
+    </Key>
+    <Property Name="roundID" Type="int" Nullable="false" />
+    <Property Name="drawPID" Type="int" Nullable="false" />
+    <Property Name="date" Type="date" />
+  </EntityType>
+  <EntityType Name="Season">
+    <Key>
+      <PropertyRef Name="seasonID" />
+    </Key>
+    <Property Name="seasonID" Type="int" Nullable="false" />
+    <Property Name="leaguePID" Type="int" Nullable="false" />
+    <Property Name="seasonYear" Type="int" Nullable="false" />
+    <Property Name="startDate" Type="date" Nullable="false" />
+    <Property Name="length" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="teamID" />
+    </Key>
+    <Property Name="teamID" Type="int" Nullable="false" />
+    <Property Name="clubPID" Type="int" Nullable="false" />
+    <Property Name="teamName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="contact" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EDSL_dbModelStoreContainer">
+    <EntitySet Name="breakDate" EntityType="Self.breakDate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Club" EntityType="Self.Club" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Division" EntityType="Self.Division" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Draw" EntityType="Self.Draw" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Leauge" EntityType="Self.Leauge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Match" EntityType="Self.Match" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Round" EntityType="Self.Round" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Season" EntityType="Self.Season" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Divisions/5
         [ResponseType(typeof(Division))]
-        public IHttpActionResult GetDivision(string id)
+        public IHttpActionResult GetDivision(int id)
         {
             Division division = db.Divisions.Find(id);
             if (division == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Divisions/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutDivision(string id, Division division)
+        public IHttpActionResult PutDivision(int id, Division division)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Divisions/5
         [ResponseType(typeof(Division))]
-        public IHttpActionResult DeleteDivision(string id)
+        public IHttpActionResult DeleteDivision(int id)
         {
             Division division = db.Divisions.Find(id);
             if (division == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool DivisionExists(string id)
+        private bool DivisionExists(int id)
         {
             return db.Divisions.Count(e => e.divID == id) > 0;
         }

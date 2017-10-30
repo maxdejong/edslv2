@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Matches/5
         [ResponseType(typeof(Match))]
-        public IHttpActionResult GetMatch(string id)
+        public IHttpActionResult GetMatch(int id)
         {
             Match match = db.Matches.Find(id);
             if (match == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Matches/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutMatch(string id, Match match)
+        public IHttpActionResult PutMatch(int id, Match match)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Matches/5
         [ResponseType(typeof(Match))]
-        public IHttpActionResult DeleteMatch(string id)
+        public IHttpActionResult DeleteMatch(int id)
         {
             Match match = db.Matches.Find(id);
             if (match == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool MatchExists(string id)
+        private bool MatchExists(int id)
         {
             return db.Matches.Count(e => e.matchID == id) > 0;
         }

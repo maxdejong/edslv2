@@ -14,8 +14,10 @@ namespace EDSL_API.Models
     
     public partial class Draw
     {
-        public string drawID { get; set; }
-        public string seasonPID { get; set; }
-        public string divisionPID { get; set; }
+        public int drawID { get; set; }
+        public int seasonPID { get; set; }
+        public int divisionPID { get; set; }
+        public Nullable<int> numFinalTeams { get; set; }
+        public Nullable<int> finalsDrawPID { get; set; }
     }
 }

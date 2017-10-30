@@ -14,8 +14,8 @@ namespace EDSL_API.Models
     
     public partial class Team
     {
-        public string teamID { get; set; }
-        public string clubPID { get; set; }
+        public int teamID { get; set; }
+        public int clubPID { get; set; }
         public string teamName { get; set; }
         public int contact { get; set; }
     }

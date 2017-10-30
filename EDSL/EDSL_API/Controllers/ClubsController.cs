@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Clubs/5
         [ResponseType(typeof(Club))]
-        public IHttpActionResult GetClub(string id)
+        public IHttpActionResult GetClub(int id)
         {
             Club club = db.Clubs.Find(id);
             if (club == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Clubs/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutClub(string id, Club club)
+        public IHttpActionResult PutClub(int id, Club club)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Clubs/5
         [ResponseType(typeof(Club))]
-        public IHttpActionResult DeleteClub(string id)
+        public IHttpActionResult DeleteClub(int id)
         {
             Club club = db.Clubs.Find(id);
             if (club == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ClubExists(string id)
+        private bool ClubExists(int id)
         {
             return db.Clubs.Count(e => e.clubID == id) > 0;
         }

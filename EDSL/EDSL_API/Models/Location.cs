@@ -14,7 +14,7 @@ namespace EDSL_API.Models
     
     public partial class Location
     {
-        public string groundID { get; set; }
+        public int groundID { get; set; }
         public string groundName { get; set; }
         public string addressLine1 { get; set; }
         public string addressLine2 { get; set; }

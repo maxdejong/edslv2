@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Seasons/5
         [ResponseType(typeof(Season))]
-        public IHttpActionResult GetSeason(string id)
+        public IHttpActionResult GetSeason(int id)
         {
             Season season = db.Seasons.Find(id);
             if (season == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Seasons/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutSeason(string id, Season season)
+        public IHttpActionResult PutSeason(int id, Season season)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Seasons/5
         [ResponseType(typeof(Season))]
-        public IHttpActionResult DeleteSeason(string id)
+        public IHttpActionResult DeleteSeason(int id)
         {
             Season season = db.Seasons.Find(id);
             if (season == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool SeasonExists(string id)
+        private bool SeasonExists(int id)
         {
             return db.Seasons.Count(e => e.seasonID == id) > 0;
         }

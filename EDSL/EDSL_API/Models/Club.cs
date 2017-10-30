@@ -14,11 +14,12 @@ namespace EDSL_API.Models
     
     public partial class Club
     {
-        public string clubID { get; set; }
+        public int clubID { get; set; }
+        public int leaguePID { get; set; }
         public string clubName { get; set; }
         public string firstRegistered { get; set; }
-        public string pContact { get; set; }
-        public string sContact { get; set; }
-        public string location { get; set; }
+        public int pContact { get; set; }
+        public Nullable<int> sContact { get; set; }
+        public int location { get; set; }
     }
 }

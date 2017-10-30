@@ -14,8 +14,8 @@ namespace EDSL_API.Models
     
     public partial class Match
     {
-        public string matchID { get; set; }
-        public string roundPID { get; set; }
+        public int matchID { get; set; }
+        public int roundPID { get; set; }
         public string homeTeam { get; set; }
         public string awayTeam { get; set; }
         public Nullable<int> homeGoal { get; set; }

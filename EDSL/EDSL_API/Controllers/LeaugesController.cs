@@ -24,7 +24,7 @@ namespace EDSL_API.Controllers
 
         // GET: api/Leauges/5
         [ResponseType(typeof(Leauge))]
-        public IHttpActionResult GetLeauge(string id)
+        public IHttpActionResult GetLeauge(int id)
         {
             Leauge leauge = db.Leauges.Find(id);
             if (leauge == null)
@@ -37,7 +37,7 @@ namespace EDSL_API.Controllers
 
         // PUT: api/Leauges/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutLeauge(string id, Leauge leauge)
+        public IHttpActionResult PutLeauge(int id, Leauge leauge)
         {
             if (!ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace EDSL_API.Controllers
 
         // DELETE: api/Leauges/5
         [ResponseType(typeof(Leauge))]
-        public IHttpActionResult DeleteLeauge(string id)
+        public IHttpActionResult DeleteLeauge(int id)
         {
             Leauge leauge = db.Leauges.Find(id);
             if (leauge == null)
@@ -125,7 +125,7 @@ namespace EDSL_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool LeaugeExists(string id)
+        private bool LeaugeExists(int id)
         {
             return db.Leauges.Count(e => e.leagueID == id) > 0;
         }
