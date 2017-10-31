@@ -9,10 +9,13 @@
       Title="TeamsView">
 
     <Grid>
-        <ListView HorizontalAlignment="Left" Height="600" Margin="526,104,0,0" VerticalAlignment="Top" Width="1288" RenderTransformOrigin="0.48,0.5">
+        <ListView x:Name="TeamList" HorizontalAlignment="Left" Height="600" Margin="526,104,0,0" VerticalAlignment="Top" Width="1288" RenderTransformOrigin="0.48,0.5">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding teamID}"/>
+                    <GridViewColumn Header="Club" Width="120" DisplayMemberBinding="{Binding clubPID}"/>
+                    <GridViewColumn Header="Team Name" Width="120" DisplayMemberBinding="{Binding teamName}"/>
+                    <GridViewColumn Header="Contact" Width="120" DisplayMemberBinding="{Binding contact}"/>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -42,18 +42,7 @@ namespace EDSL_Admin.Views
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //Add to database
-            private const string URL = "https://sub.domain.com/objects.json?api_key=123";
-            private const string DATA = @"{""object"":{""name"":""Name""}}";
 
-            HttpClient client = new HttpClient();
-
-
-
-
-
-            EDSLToolbox.Reff.Title.Content = "Seasons (season added)";
-            EDSLToolbox.Reff.Display.Content = new Season();
         }
 
         private void BreakDateList_SelectionChanged(object sender, SelectionChangedEventArgs e)

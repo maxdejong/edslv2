@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-H:\edslv2\EDSL\EDSL_Admin\obj\Debug\
+H:\ed\EDSL\EDSL_Admin\obj\Debug\
 EDSL_Admin
 none
 false
 DEBUG;TRACE
-H:\edslv2\EDSL\EDSL_Admin\App.xaml
+H:\ed\EDSL\EDSL_Admin\App.xaml
 10-1254229270
 
 14-1560341823
-131569487696
+15-1393756619
 MainWindow.xaml;Views\DivisionsView.xaml;Views\EDSLToolbox.xaml;Views\HomePage.xaml;Views\LoginScreen.xaml;Views\PlayersView.xaml;Views\SeasonAddEdit.xaml;Views\SeasonList.xaml;Views\TeamsClubsView.xaml;Views\TeamsView.xaml;
 
 False
