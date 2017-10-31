@@ -1,0 +1,50 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EDSL_Admin.Views"
+      xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="EDSL_Admin.Views.TeamAddEdit"
+      mc:Ignorable="d" 
+      d:DesignHeight="920" d:DesignWidth="1920"
+      Title="TeamAddEdit">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="135,116,0,0" TextWrapping="Wrap" Text="Team ID:" VerticalAlignment="Top" Width="204"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,165,0,0" TextWrapping="Wrap" Text="Team name:" VerticalAlignment="Top" Width="81"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="189,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="205"/>
+        <TextBlock HorizontalAlignment="Left" Margin="105,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Parent Club"/><Run Text=" ID:"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="189,212,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="205"/>
+        <Label Content="Team Info" HorizontalAlignment="Left" Margin="179,64,0,0" VerticalAlignment="Top" Width="215"/>
+        <Label Content="Contact" HorizontalAlignment="Left" Margin="179,321,0,0" VerticalAlignment="Top" Width="215"/>
+        <TextBlock HorizontalAlignment="Left" Margin="93,390,0,0" TextWrapping="Wrap" Text="Contact ID:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="92,433,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="92,481,0,0" TextWrapping="Wrap" Text="Last name:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="109,524,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="105,567,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="96,612,0,0" TextWrapping="Wrap" Text="Post code" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="119,657,0,0" TextWrapping="Wrap" Text="State:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="114,707,0,0" TextWrapping="Wrap" Text="Suburb" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="118,757,0,0" TextWrapping="Wrap" Text="Phone" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,805,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="168,518,0,0" VerticalAlignment="Top" Width="120">
+            <System:String>M</System:String>
+            <System:String>F</System:String>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,383,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,426,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,474,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,567,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,605,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,700,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,759,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="168,651,0,0" VerticalAlignment="Top" Width="120">
+            <System:String>ACT</System:String>
+            <System:String>QLD</System:String>
+            <System:String>SA</System:String>
+            <System:String>TAS</System:String>
+            <System:String>VIC</System:String>
+            <System:String>WA</System:String>
+        </ComboBox>
+    </Grid>
+</Page>

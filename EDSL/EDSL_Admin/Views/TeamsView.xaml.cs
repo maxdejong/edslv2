@@ -53,5 +53,20 @@ namespace EDSL_Admin.Views
                 TeamList.ItemsSource = response.Content.ReadAsAsync<IEnumerable<Team>>().Result;
             }
         }
+
+        private void TeamList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EditBtn.IsEnabled = true;
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EDSLToolbox.Reff.Display.Content = new TeamAddEdit();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EDSLToolbox.Reff.Display.Content = new TeamAddEdit();
+        }
     }
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\maxde\Documents\GitHub\edslv2\EDSL\EDSL_Admin\obj\Release\
+H:\ed\EDSL\EDSL_Admin\obj\Release\
 EDSL_Admin
 none
 false
 TRACE
-C:\Users\maxde\Documents\GitHub\edslv2\EDSL\EDSL_Admin\App.xaml
-51692380243
+H:\ed\EDSL\EDSL_Admin\App.xaml
+111776657652
 
-13-162707239
-131569487696
-MainWindow.xaml;Views\EDSLToolbox.xaml;Views\HomePage.xaml;Views\LoginScreen.xaml;Views\SeasonList.xaml;
+19-488051960
+15-1393756619
+MainWindow.xaml;Views\DivisionsView.xaml;Views\EDSLToolbox.xaml;Views\HomePage.xaml;Views\LoginScreen.xaml;Views\PlayersView.xaml;Views\SeasonAddEdit.xaml;Views\SeasonList.xaml;Views\TeamAddEdit.xaml;Views\TeamsClubsView.xaml;Views\TeamsView.xaml;
 
 True
 

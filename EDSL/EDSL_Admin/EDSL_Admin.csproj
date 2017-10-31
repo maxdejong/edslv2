@@ -82,6 +82,9 @@
     <Compile Include="Views\SeasonList.xaml.cs">
       <DependentUpon>SeasonList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TeamAddEdit.xaml.cs">
+      <DependentUpon>TeamAddEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TeamsClubsView.xaml.cs">
       <DependentUpon>TeamsClubsView.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SeasonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TeamAddEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
