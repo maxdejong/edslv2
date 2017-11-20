@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Round]
 (
-	[roundID] NVARCHAR(50) NOT NULL PRIMARY KEY, 
-	[drawPID] NVARCHAR(50) NOT NULL,
+	[roundID] int NOT NULL PRIMARY KEY, 
+	[drawPID] int FOREIGN KEY REFERENCES Draw(drawID) NOT NULL,
     [date] DATE NULL
 )

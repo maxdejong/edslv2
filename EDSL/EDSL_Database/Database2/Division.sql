@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Division]
 (
-	[divID] NVARCHAR(50) NOT NULL PRIMARY KEY, 
-	[leaguePID] NVARCHAR(50) NOT NULL,
+	[divisionID] int NOT NULL PRIMARY KEY, 
+	[leagueID] int FOREIGN KEY REFERENCES Leauge(LeagueID) NOT NULL,
     [divCode] NVARCHAR(50) NULL, 
     [ageLimit] INT NULL
 )

@@ -10,5 +10,5 @@
 	[state] NVARCHAR(7) NOT NULL,
 	[suburb] NVARCHAR(50) NOT NULL,
     [phone] NVARCHAR(50) NOT NULL, 
-    [email] NVARCHAR(50) NULL,
+    [email] NVARCHAR(90) NULL,
 )

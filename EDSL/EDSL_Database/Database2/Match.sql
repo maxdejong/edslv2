@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[Match]
 (
-	[matchID] NVARCHAR(50) NOT NULL PRIMARY KEY,
-	[roundPID] NVARCHAR(50) NOT NULL,
-    [homeTeam] NVARCHAR(50) NULL, 
-    [awayTeam] NVARCHAR(50) NULL, 
+	[matchID] int NOT NULL PRIMARY KEY,
+	[roundPID] int FOREIGN KEY REFERENCES Round(roundID) NOT NULL,
+    [homeTeam] int FOREIGN KEY REFERENCES Team(TeamID) NULL, 
+    [awayTeam] int FOREIGN KEY REFERENCES Team(TeamID) NULL, 
     [homeGoal] INT NULL, 
     [awayGoal] INT NULL
 )

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[breakDate]
 (
 	[breakID] int NOT NULL PRIMARY KEY,
-	[seasonPID] int NOT NULL,
+	[seasonID] int Foreign key REFERENCES Season(seasonID),
     [breakDate] DATE NULL
 )

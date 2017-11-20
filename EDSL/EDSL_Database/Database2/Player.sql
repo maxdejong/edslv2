@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[Player]
 (
-	[playerID] NVARCHAR(50) NOT NULL PRIMARY KEY,
-	[teamPID] NVARCHAR(50) NOT NULL,
-    [pContact] NVARCHAR(50) NOT NULL,
-	[eContact] NVARCHAR(50) NULL,
-	[firstRegistered] INT NULL,
+	[playerID] int NOT NULL PRIMARY KEY,
+	[teamPID] int FOREIGN KEY REFERENCES Team(TeamID) NOT NULL,
+    [pContact] int FOREIGN KEY REFERENCES Contact(contactID) NOT NULL,
+	[eContact] int FOREIGN KEY REFERENCES Contact(contactID) NULL,
+	[firstRegistered] date NULL,
 	[age] int NOT NULL,
 	[birthDate] date not null,
 )
