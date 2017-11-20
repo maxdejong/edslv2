@@ -14,7 +14,7 @@ namespace EDSL_API.Controllers
 {
     public class TeamsController : ApiController
     {
-        private EDSL_dbEntities db = new EDSL_dbEntities();
+        private EDSLEntities db = new EDSLEntities();
 
         // GET: api/Teams
         public IQueryable<Team> GetTeams()

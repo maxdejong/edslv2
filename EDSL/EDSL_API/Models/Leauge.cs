@@ -14,7 +14,24 @@ namespace EDSL_API.Models
     
     public partial class Leauge
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Leauge()
+        {
+            this.Clubs = new HashSet<Club>();
+            this.Divisions = new HashSet<Division>();
+            this.Seasons = new HashSet<Season>();
+        }
+    
         public int leagueID { get; set; }
         public string leagueName { get; set; }
+        public Nullable<int> pContact { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Club> Clubs { get; set; }
+        public virtual Contact Contact { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Division> Divisions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Season> Seasons { get; set; }
     }
 }

@@ -14,6 +14,17 @@ namespace EDSL_API.Models
     
     public partial class Contact
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Contact()
+        {
+            this.Clubs = new HashSet<Club>();
+            this.Clubs1 = new HashSet<Club>();
+            this.Leauges = new HashSet<Leauge>();
+            this.Players = new HashSet<Player>();
+            this.Players1 = new HashSet<Player>();
+            this.Teams = new HashSet<Team>();
+        }
+    
         public int contactID { get; set; }
         public string fName { get; set; }
         public string lName { get; set; }
@@ -25,5 +36,18 @@ namespace EDSL_API.Models
         public string suburb { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Club> Clubs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Club> Clubs1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Leauge> Leauges { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Player> Players { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Player> Players1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Team> Teams { get; set; }
     }
 }

@@ -17,3 +17,12 @@ H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\Model.xml
 H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\refactor.xml
 H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\postdeploy.sql
 H:\edslv2\EDSL\EDSL_Database\Database2\obj\Debug\predeploy.sql
+D:\Users\Max\Documents\UniWork\EDSL\edslv21\EDSL\EDSL_Database\Database2\bin\Debug\EDSL_Database.dacpac
+D:\Users\Max\Documents\UniWork\EDSL\edslv21\EDSL\EDSL_Database\Database2\bin\Debug\Database2.dll
+D:\Users\Max\Documents\UniWork\EDSL\edslv21\EDSL\EDSL_Database\Database2\bin\Debug\Database2.pdb
+D:\Users\Max\Documents\UniWork\EDSL\edslv21\EDSL\EDSL_Database\Database2\obj\Debug\Model.xml
+D:\Users\Max\Documents\UniWork\EDSL\edslv21\EDSL\EDSL_Database\Database2\obj\Debug\refactor.xml
+D:\Users\Max\Documents\UniWork\EDSL\edslv21\EDSL\EDSL_Database\Database2\obj\Debug\postdeploy.sql
+D:\Users\Max\Documents\UniWork\EDSL\edslv21\EDSL\EDSL_Database\Database2\obj\Debug\predeploy.sql
+D:\Users\Max\Documents\UniWork\EDSL\edslv21\EDSL\EDSL_Database\Database2\obj\Debug\Database2.dll
+D:\Users\Max\Documents\UniWork\EDSL\edslv21\EDSL\EDSL_Database\Database2\obj\Debug\Database2.pdb

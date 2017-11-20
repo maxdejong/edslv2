@@ -7,7 +7,6 @@ using System.Web.Http;
 
 namespace EDSL_API.Controllers
 {
-    [Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values

@@ -14,9 +14,25 @@ namespace EDSL_API.Models
     
     public partial class Division
     {
-        public int divID { get; set; }
-        public int leaguePID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Division()
+        {
+            this.Draws = new HashSet<Draw>();
+            this.Ladders = new HashSet<Ladder>();
+            this.Teams = new HashSet<Team>();
+        }
+    
+        public int divisionID { get; set; }
+        public int leagueID { get; set; }
         public string divCode { get; set; }
         public Nullable<int> ageLimit { get; set; }
+    
+        public virtual Leauge Leauge { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Draw> Draws { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ladder> Ladders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Team> Teams { get; set; }
     }
 }

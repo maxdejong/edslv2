@@ -14,7 +14,7 @@ namespace EDSL_API.Controllers
 {
     public class ContactsController : ApiController
     {
-        private EDSL_dbEntities db = new EDSL_dbEntities();
+        private EDSLEntities db = new EDSLEntities();
 
         // GET: api/Contacts
         public IQueryable<Contact> GetContacts()

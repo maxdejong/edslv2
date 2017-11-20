@@ -14,12 +14,28 @@ namespace EDSL_API.Models
     
     public partial class Club
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Club()
+        {
+            this.Locations = new HashSet<Location>();
+            this.Teams = new HashSet<Team>();
+        }
+    
         public int clubID { get; set; }
-        public int leaguePID { get; set; }
+        public Nullable<int> leagueID { get; set; }
         public string clubName { get; set; }
-        public string firstRegistered { get; set; }
-        public int pContact { get; set; }
+        public Nullable<System.DateTime> firstRegistered { get; set; }
+        public Nullable<int> pContact { get; set; }
         public Nullable<int> sContact { get; set; }
-        public int location { get; set; }
+        public Nullable<int> location { get; set; }
+    
+        public virtual Leauge Leauge { get; set; }
+        public virtual Location Location1 { get; set; }
+        public virtual Contact Contact { get; set; }
+        public virtual Contact Contact1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Location> Locations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Team> Teams { get; set; }
     }
 }

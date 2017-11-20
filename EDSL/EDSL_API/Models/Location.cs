@@ -14,6 +14,12 @@ namespace EDSL_API.Models
     
     public partial class Location
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Location()
+        {
+            this.Clubs = new HashSet<Club>();
+        }
+    
         public int groundID { get; set; }
         public string groundName { get; set; }
         public string addressLine1 { get; set; }
@@ -21,6 +27,10 @@ namespace EDSL_API.Models
         public int postCode { get; set; }
         public string suburb { get; set; }
         public string state { get; set; }
-        public string homeClub { get; set; }
+        public Nullable<int> homeClub { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Club> Clubs { get; set; }
+        public virtual Club Club { get; set; }
     }
 }

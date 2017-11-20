@@ -14,7 +14,7 @@ namespace EDSL_API.Controllers
 {
     public class LocationsController : ApiController
     {
-        private EDSL_dbEntities db = new EDSL_dbEntities();
+        private EDSLEntities db = new EDSLEntities();
 
         // GET: api/Locations
         public IQueryable<Location> GetLocations()

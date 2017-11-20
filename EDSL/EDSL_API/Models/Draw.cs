@@ -14,10 +14,25 @@ namespace EDSL_API.Models
     
     public partial class Draw
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Draw()
+        {
+            this.Draw1 = new HashSet<Draw>();
+            this.Rounds = new HashSet<Round>();
+        }
+    
         public int drawID { get; set; }
-        public int seasonPID { get; set; }
-        public int divisionPID { get; set; }
+        public int seasonID { get; set; }
+        public int divisionID { get; set; }
         public Nullable<int> numFinalTeams { get; set; }
         public Nullable<int> finalsDrawPID { get; set; }
+    
+        public virtual Division Division { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Draw> Draw1 { get; set; }
+        public virtual Draw Draw2 { get; set; }
+        public virtual Season Season { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Round> Rounds { get; set; }
     }
 }

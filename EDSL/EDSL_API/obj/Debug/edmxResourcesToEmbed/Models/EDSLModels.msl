@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EDSLModelStoreContainer" CdmEntityContainer="EDSLEntities">
+    <EntitySetMapping Name="C__RefactorLog">
+      <EntityTypeMapping TypeName="EDSLModel.C__RefactorLog">
+        <MappingFragment StoreEntitySet="__RefactorLog">
+          <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="breakDates">
+      <EntityTypeMapping TypeName="EDSLModel.breakDate">
+        <MappingFragment StoreEntitySet="breakDate">
+          <ScalarProperty Name="breakID" ColumnName="breakID" />
+          <ScalarProperty Name="seasonID" ColumnName="seasonID" />
+          <ScalarProperty Name="breakDate1" ColumnName="breakDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clubs">
+      <EntityTypeMapping TypeName="EDSLModel.Club">
+        <MappingFragment StoreEntitySet="Club">
+          <ScalarProperty Name="clubID" ColumnName="clubID" />
+          <ScalarProperty Name="leagueID" ColumnName="leagueID" />
+          <ScalarProperty Name="clubName" ColumnName="clubName" />
+          <ScalarProperty Name="firstRegistered" ColumnName="firstRegistered" />
+          <ScalarProperty Name="pContact" ColumnName="pContact" />
+          <ScalarProperty Name="sContact" ColumnName="sContact" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="EDSLModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="contactID" ColumnName="contactID" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="suburb" ColumnName="suburb" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Divisions">
+      <EntityTypeMapping TypeName="EDSLModel.Division">
+        <MappingFragment StoreEntitySet="Division">
+          <ScalarProperty Name="divisionID" ColumnName="divisionID" />
+          <ScalarProperty Name="leagueID" ColumnName="leagueID" />
+          <ScalarProperty Name="divCode" ColumnName="divCode" />
+          <ScalarProperty Name="ageLimit" ColumnName="ageLimit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Draws">
+      <EntityTypeMapping TypeName="EDSLModel.Draw">
+        <MappingFragment StoreEntitySet="Draw">
+          <ScalarProperty Name="drawID" ColumnName="drawID" />
+          <ScalarProperty Name="seasonID" ColumnName="seasonID" />
+          <ScalarProperty Name="divisionID" ColumnName="divisionID" />
+          <ScalarProperty Name="numFinalTeams" ColumnName="numFinalTeams" />
+          <ScalarProperty Name="finalsDrawPID" ColumnName="finalsDrawPID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ladders">
+      <EntityTypeMapping TypeName="EDSLModel.Ladder">
+        <MappingFragment StoreEntitySet="Ladder">
+          <ScalarProperty Name="LadderId" ColumnName="LadderId" />
+          <ScalarProperty Name="divisonPID" ColumnName="divisonPID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LadderPos">
+      <EntityTypeMapping TypeName="EDSLModel.LadderPos">
+        <MappingFragment StoreEntitySet="LadderPos">
+          <ScalarProperty Name="LadderPosId" ColumnName="LadderPosId" />
+          <ScalarProperty Name="LadderID" ColumnName="LadderID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="Played" ColumnName="Played" />
+          <ScalarProperty Name="Wins" ColumnName="Wins" />
+          <ScalarProperty Name="losses" ColumnName="losses" />
+          <ScalarProperty Name="draws" ColumnName="draws" />
+          <ScalarProperty Name="goalsFor" ColumnName="goalsFor" />
+          <ScalarProperty Name="goalsAgainst" ColumnName="goalsAgainst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leauges">
+      <EntityTypeMapping TypeName="EDSLModel.Leauge">
+        <MappingFragment StoreEntitySet="Leauge">
+          <ScalarProperty Name="leagueID" ColumnName="leagueID" />
+          <ScalarProperty Name="leagueName" ColumnName="leagueName" />
+          <ScalarProperty Name="pContact" ColumnName="pContact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="EDSLModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="groundID" ColumnName="groundID" />
+          <ScalarProperty Name="groundName" ColumnName="groundName" />
+          <ScalarProperty Name="addressLine1" ColumnName="addressLine1" />
+          <ScalarProperty Name="addressLine2" ColumnName="addressLine2" />
+          <ScalarProperty Name="postCode" ColumnName="postCode" />
+          <ScalarProperty Name="suburb" ColumnName="suburb" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="homeClub" ColumnName="homeClub" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Matches">
+      <EntityTypeMapping TypeName="EDSLModel.Match">
+        <MappingFragment StoreEntitySet="Match">
+          <ScalarProperty Name="matchID" ColumnName="matchID" />
+          <ScalarProperty Name="roundPID" ColumnName="roundPID" />
+          <ScalarProperty Name="homeTeam" ColumnName="homeTeam" />
+          <ScalarProperty Name="awayTeam" ColumnName="awayTeam" />
+          <ScalarProperty Name="homeGoal" ColumnName="homeGoal" />
+          <ScalarProperty Name="awayGoal" ColumnName="awayGoal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="EDSLModel.Player">
+        <MappingFragment StoreEntitySet="Player">
+          <ScalarProperty Name="playerID" ColumnName="playerID" />
+          <ScalarProperty Name="teamPID" ColumnName="teamPID" />
+          <ScalarProperty Name="pContact" ColumnName="pContact" />
+          <ScalarProperty Name="eContact" ColumnName="eContact" />
+          <ScalarProperty Name="firstRegistered" ColumnName="firstRegistered" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rounds">
+      <EntityTypeMapping TypeName="EDSLModel.Round">
+        <MappingFragment StoreEntitySet="Round">
+          <ScalarProperty Name="roundID" ColumnName="roundID" />
+          <ScalarProperty Name="drawPID" ColumnName="drawPID" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seasons">
+      <EntityTypeMapping TypeName="EDSLModel.Season">
+        <MappingFragment StoreEntitySet="Season">
+          <ScalarProperty Name="seasonID" ColumnName="seasonID" />
+          <ScalarProperty Name="leaguePID" ColumnName="leaguePID" />
+          <ScalarProperty Name="seasonYear" ColumnName="seasonYear" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="length" ColumnName="length" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="EDSLModel.Team">
+        <MappingFragment StoreEntitySet="Team">
+          <ScalarProperty Name="teamID" ColumnName="teamID" />
+          <ScalarProperty Name="clubPID" ColumnName="clubPID" />
+          <ScalarProperty Name="divisionPID" ColumnName="divisionPID" />
+          <ScalarProperty Name="teamName" ColumnName="teamName" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

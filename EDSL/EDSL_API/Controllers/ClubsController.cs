@@ -14,7 +14,7 @@ namespace EDSL_API.Controllers
 {
     public class ClubsController : ApiController
     {
-        private EDSL_dbEntities db = new EDSL_dbEntities();
+        private EDSLEntities db = new EDSLEntities();
 
         // GET: api/Clubs
         public IQueryable<Club> GetClubs()

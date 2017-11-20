@@ -14,10 +14,23 @@ namespace EDSL_API.Models
     
     public partial class Season
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Season()
+        {
+            this.breakDates = new HashSet<breakDate>();
+            this.Draws = new HashSet<Draw>();
+        }
+    
         public int seasonID { get; set; }
         public int leaguePID { get; set; }
         public int seasonYear { get; set; }
         public System.DateTime startDate { get; set; }
         public int length { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<breakDate> breakDates { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Draw> Draws { get; set; }
+        public virtual Leauge Leauge { get; set; }
     }
 }

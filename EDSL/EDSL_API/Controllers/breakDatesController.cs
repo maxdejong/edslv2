@@ -14,7 +14,7 @@ namespace EDSL_API.Controllers
 {
     public class breakDatesController : ApiController
     {
-        private EDSL_dbEntities db = new EDSL_dbEntities();
+        private EDSLEntities db = new EDSLEntities();
 
         // GET: api/breakDates
         public IQueryable<breakDate> GetbreakDates()

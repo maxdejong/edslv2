@@ -14,7 +14,7 @@ namespace EDSL_API.Controllers
 {
     public class MatchesController : ApiController
     {
-        private EDSL_dbEntities db = new EDSL_dbEntities();
+        private EDSLEntities db = new EDSLEntities();
 
         // GET: api/Matches
         public IQueryable<Match> GetMatches()

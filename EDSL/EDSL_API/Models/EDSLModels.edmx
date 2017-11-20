@@ -1,0 +1,1403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EDSLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="breakDate">
+          <Key>
+            <PropertyRef Name="breakID" />
+          </Key>
+          <Property Name="breakID" Type="int" Nullable="false" />
+          <Property Name="seasonID" Type="int" />
+          <Property Name="breakDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Club">
+          <Key>
+            <PropertyRef Name="clubID" />
+          </Key>
+          <Property Name="clubID" Type="int" Nullable="false" />
+          <Property Name="leagueID" Type="int" />
+          <Property Name="clubName" Type="nvarchar" MaxLength="50" />
+          <Property Name="firstRegistered" Type="date" />
+          <Property Name="pContact" Type="int" />
+          <Property Name="sContact" Type="int" />
+          <Property Name="location" Type="int" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="contactID" />
+          </Key>
+          <Property Name="contactID" Type="int" Nullable="false" />
+          <Property Name="fName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="address1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="postcode" Type="int" />
+          <Property Name="state" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="suburb" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="90" />
+        </EntityType>
+        <EntityType Name="Division">
+          <Key>
+            <PropertyRef Name="divisionID" />
+          </Key>
+          <Property Name="divisionID" Type="int" Nullable="false" />
+          <Property Name="leagueID" Type="int" Nullable="false" />
+          <Property Name="divCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ageLimit" Type="int" />
+        </EntityType>
+        <EntityType Name="Draw">
+          <Key>
+            <PropertyRef Name="drawID" />
+          </Key>
+          <Property Name="drawID" Type="int" Nullable="false" />
+          <Property Name="seasonID" Type="int" Nullable="false" />
+          <Property Name="divisionID" Type="int" Nullable="false" />
+          <Property Name="numFinalTeams" Type="int" />
+          <Property Name="finalsDrawPID" Type="int" />
+        </EntityType>
+        <EntityType Name="Ladder">
+          <Key>
+            <PropertyRef Name="LadderId" />
+          </Key>
+          <Property Name="LadderId" Type="int" Nullable="false" />
+          <Property Name="divisonPID" Type="int" />
+        </EntityType>
+        <EntityType Name="LadderPos">
+          <Key>
+            <PropertyRef Name="LadderPosId" />
+          </Key>
+          <Property Name="LadderPosId" Type="int" Nullable="false" />
+          <Property Name="LadderID" Type="int" Nullable="false" />
+          <Property Name="TeamID" Type="int" Nullable="false" />
+          <Property Name="Played" Type="int" Nullable="false" />
+          <Property Name="Wins" Type="int" Nullable="false" />
+          <Property Name="losses" Type="int" Nullable="false" />
+          <Property Name="draws" Type="int" Nullable="false" />
+          <Property Name="goalsFor" Type="int" Nullable="false" />
+          <Property Name="goalsAgainst" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Leauge">
+          <Key>
+            <PropertyRef Name="leagueID" />
+          </Key>
+          <Property Name="leagueID" Type="int" Nullable="false" />
+          <Property Name="leagueName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pContact" Type="int" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="groundID" />
+          </Key>
+          <Property Name="groundID" Type="int" Nullable="false" />
+          <Property Name="groundName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="addressLine1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="addressLine2" Type="nvarchar" MaxLength="50" />
+          <Property Name="postCode" Type="int" Nullable="false" />
+          <Property Name="suburb" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="state" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="homeClub" Type="int" />
+        </EntityType>
+        <EntityType Name="Match">
+          <Key>
+            <PropertyRef Name="matchID" />
+          </Key>
+          <Property Name="matchID" Type="int" Nullable="false" />
+          <Property Name="roundPID" Type="int" Nullable="false" />
+          <Property Name="homeTeam" Type="int" />
+          <Property Name="awayTeam" Type="int" />
+          <Property Name="homeGoal" Type="int" />
+          <Property Name="awayGoal" Type="int" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="playerID" />
+          </Key>
+          <Property Name="playerID" Type="int" Nullable="false" />
+          <Property Name="teamPID" Type="int" Nullable="false" />
+          <Property Name="pContact" Type="int" Nullable="false" />
+          <Property Name="eContact" Type="int" />
+          <Property Name="firstRegistered" Type="date" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="birthDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Round">
+          <Key>
+            <PropertyRef Name="roundID" />
+          </Key>
+          <Property Name="roundID" Type="int" Nullable="false" />
+          <Property Name="drawPID" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" />
+        </EntityType>
+        <EntityType Name="Season">
+          <Key>
+            <PropertyRef Name="seasonID" />
+          </Key>
+          <Property Name="seasonID" Type="int" Nullable="false" />
+          <Property Name="leaguePID" Type="int" Nullable="false" />
+          <Property Name="seasonYear" Type="int" Nullable="false" />
+          <Property Name="startDate" Type="date" Nullable="false" />
+          <Property Name="length" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="teamID" />
+          </Key>
+          <Property Name="teamID" Type="int" Nullable="false" />
+          <Property Name="clubPID" Type="int" Nullable="false" />
+          <Property Name="divisionPID" Type="int" />
+          <Property Name="teamName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="contact" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__breakDate__seaso__5EBF139D">
+          <End Role="Season" Type="Self.Season" Multiplicity="0..1" />
+          <End Role="breakDate" Type="Self.breakDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Season">
+              <PropertyRef Name="seasonID" />
+            </Principal>
+            <Dependent Role="breakDate">
+              <PropertyRef Name="seasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Club__leagueID__5FB337D6">
+          <End Role="Leauge" Type="Self.Leauge" Multiplicity="0..1" />
+          <End Role="Club" Type="Self.Club" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leauge">
+              <PropertyRef Name="leagueID" />
+            </Principal>
+            <Dependent Role="Club">
+              <PropertyRef Name="leagueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Club__location__628FA481">
+          <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+          <End Role="Club" Type="Self.Club" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="groundID" />
+            </Principal>
+            <Dependent Role="Club">
+              <PropertyRef Name="location" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Club__pContact__60A75C0F">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Club" Type="Self.Club" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Club">
+              <PropertyRef Name="pContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Club__sContact__619B8048">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Club" Type="Self.Club" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Club">
+              <PropertyRef Name="sContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Division__league__6383C8BA">
+          <End Role="Leauge" Type="Self.Leauge" Multiplicity="1" />
+          <End Role="Division" Type="Self.Division" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leauge">
+              <PropertyRef Name="leagueID" />
+            </Principal>
+            <Dependent Role="Division">
+              <PropertyRef Name="leagueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Draw__divisionID__656C112C">
+          <End Role="Division" Type="Self.Division" Multiplicity="1" />
+          <End Role="Draw" Type="Self.Draw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="divisionID" />
+            </Principal>
+            <Dependent Role="Draw">
+              <PropertyRef Name="divisionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Draw__finalsDraw__66603565">
+          <End Role="Draw" Type="Self.Draw" Multiplicity="0..1" />
+          <End Role="Draw1" Type="Self.Draw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Draw">
+              <PropertyRef Name="drawID" />
+            </Principal>
+            <Dependent Role="Draw1">
+              <PropertyRef Name="finalsDrawPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Draw__seasonID__6477ECF3">
+          <End Role="Season" Type="Self.Season" Multiplicity="1" />
+          <End Role="Draw" Type="Self.Draw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Season">
+              <PropertyRef Name="seasonID" />
+            </Principal>
+            <Dependent Role="Draw">
+              <PropertyRef Name="seasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ladder__divisonP__797309D9">
+          <End Role="Division" Type="Self.Division" Multiplicity="0..1" />
+          <End Role="Ladder" Type="Self.Ladder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="divisionID" />
+            </Principal>
+            <Dependent Role="Ladder">
+              <PropertyRef Name="divisonPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LadderPos__Ladde__7A672E12">
+          <End Role="Ladder" Type="Self.Ladder" Multiplicity="1" />
+          <End Role="LadderPos" Type="Self.LadderPos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ladder">
+              <PropertyRef Name="LadderId" />
+            </Principal>
+            <Dependent Role="LadderPos">
+              <PropertyRef Name="LadderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LadderPos__TeamI__7B5B524B">
+          <End Role="Team" Type="Self.Team" Multiplicity="1" />
+          <End Role="LadderPos" Type="Self.LadderPos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="LadderPos">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leauge__pContact__6754599E">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Leauge" Type="Self.Leauge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Leauge">
+              <PropertyRef Name="pContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Location__homeCl__68487DD7">
+          <End Role="Club" Type="Self.Club" Multiplicity="0..1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="clubID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="homeClub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Match__awayTeam__6B24EA82">
+          <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+          <End Role="Match" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="awayTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Match__homeTeam__6A30C649">
+          <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+          <End Role="Match" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="homeTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Match__roundPID__693CA210">
+          <End Role="Round" Type="Self.Round" Multiplicity="1" />
+          <End Role="Match" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Round">
+              <PropertyRef Name="roundID" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="roundPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Player__eContact__6E01572D">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="eContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Player__pContact__6D0D32F4">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="pContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Player__teamPID__6C190EBB">
+          <End Role="Team" Type="Self.Team" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="teamPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Round__drawPID__6EF57B66">
+          <End Role="Draw" Type="Self.Draw" Multiplicity="1" />
+          <End Role="Round" Type="Self.Round" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Draw">
+              <PropertyRef Name="drawID" />
+            </Principal>
+            <Dependent Role="Round">
+              <PropertyRef Name="drawPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Season__leaguePI__6FE99F9F">
+          <End Role="Leauge" Type="Self.Leauge" Multiplicity="1" />
+          <End Role="Season" Type="Self.Season" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leauge">
+              <PropertyRef Name="leagueID" />
+            </Principal>
+            <Dependent Role="Season">
+              <PropertyRef Name="leaguePID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team__clubPID__70DDC3D8">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="clubID" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="clubPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team__contact__72C60C4A">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="contact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team__divisionPI__71D1E811">
+          <End Role="Division" Type="Self.Division" Multiplicity="0..1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="divisionID" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="divisionPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EDSLModelStoreContainer">
+          <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="breakDate" EntityType="Self.breakDate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Club" EntityType="Self.Club" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Division" EntityType="Self.Division" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Draw" EntityType="Self.Draw" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ladder" EntityType="Self.Ladder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LadderPos" EntityType="Self.LadderPos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Leauge" EntityType="Self.Leauge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Match" EntityType="Self.Match" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Round" EntityType="Self.Round" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Season" EntityType="Self.Season" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__breakDate__seaso__5EBF139D" Association="Self.FK__breakDate__seaso__5EBF139D">
+            <End Role="Season" EntitySet="Season" />
+            <End Role="breakDate" EntitySet="breakDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Club__leagueID__5FB337D6" Association="Self.FK__Club__leagueID__5FB337D6">
+            <End Role="Leauge" EntitySet="Leauge" />
+            <End Role="Club" EntitySet="Club" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Club__location__628FA481" Association="Self.FK__Club__location__628FA481">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Club" EntitySet="Club" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Club__pContact__60A75C0F" Association="Self.FK__Club__pContact__60A75C0F">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Club" EntitySet="Club" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Club__sContact__619B8048" Association="Self.FK__Club__sContact__619B8048">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Club" EntitySet="Club" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Division__league__6383C8BA" Association="Self.FK__Division__league__6383C8BA">
+            <End Role="Leauge" EntitySet="Leauge" />
+            <End Role="Division" EntitySet="Division" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Draw__divisionID__656C112C" Association="Self.FK__Draw__divisionID__656C112C">
+            <End Role="Division" EntitySet="Division" />
+            <End Role="Draw" EntitySet="Draw" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Draw__finalsDraw__66603565" Association="Self.FK__Draw__finalsDraw__66603565">
+            <End Role="Draw" EntitySet="Draw" />
+            <End Role="Draw1" EntitySet="Draw" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Draw__seasonID__6477ECF3" Association="Self.FK__Draw__seasonID__6477ECF3">
+            <End Role="Season" EntitySet="Season" />
+            <End Role="Draw" EntitySet="Draw" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ladder__divisonP__797309D9" Association="Self.FK__Ladder__divisonP__797309D9">
+            <End Role="Division" EntitySet="Division" />
+            <End Role="Ladder" EntitySet="Ladder" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LadderPos__Ladde__7A672E12" Association="Self.FK__LadderPos__Ladde__7A672E12">
+            <End Role="Ladder" EntitySet="Ladder" />
+            <End Role="LadderPos" EntitySet="LadderPos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LadderPos__TeamI__7B5B524B" Association="Self.FK__LadderPos__TeamI__7B5B524B">
+            <End Role="Team" EntitySet="Team" />
+            <End Role="LadderPos" EntitySet="LadderPos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leauge__pContact__6754599E" Association="Self.FK__Leauge__pContact__6754599E">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Leauge" EntitySet="Leauge" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Location__homeCl__68487DD7" Association="Self.FK__Location__homeCl__68487DD7">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Match__awayTeam__6B24EA82" Association="Self.FK__Match__awayTeam__6B24EA82">
+            <End Role="Team" EntitySet="Team" />
+            <End Role="Match" EntitySet="Match" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Match__homeTeam__6A30C649" Association="Self.FK__Match__homeTeam__6A30C649">
+            <End Role="Team" EntitySet="Team" />
+            <End Role="Match" EntitySet="Match" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Match__roundPID__693CA210" Association="Self.FK__Match__roundPID__693CA210">
+            <End Role="Round" EntitySet="Round" />
+            <End Role="Match" EntitySet="Match" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Player__eContact__6E01572D" Association="Self.FK__Player__eContact__6E01572D">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Player" EntitySet="Player" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Player__pContact__6D0D32F4" Association="Self.FK__Player__pContact__6D0D32F4">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Player" EntitySet="Player" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Player__teamPID__6C190EBB" Association="Self.FK__Player__teamPID__6C190EBB">
+            <End Role="Team" EntitySet="Team" />
+            <End Role="Player" EntitySet="Player" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Round__drawPID__6EF57B66" Association="Self.FK__Round__drawPID__6EF57B66">
+            <End Role="Draw" EntitySet="Draw" />
+            <End Role="Round" EntitySet="Round" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Season__leaguePI__6FE99F9F" Association="Self.FK__Season__leaguePI__6FE99F9F">
+            <End Role="Leauge" EntitySet="Leauge" />
+            <End Role="Season" EntitySet="Season" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team__clubPID__70DDC3D8" Association="Self.FK__Team__clubPID__70DDC3D8">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Team" EntitySet="Team" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team__contact__72C60C4A" Association="Self.FK__Team__contact__72C60C4A">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Team" EntitySet="Team" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team__divisionPI__71D1E811" Association="Self.FK__Team__divisionPI__71D1E811">
+            <End Role="Division" EntitySet="Division" />
+            <End Role="Team" EntitySet="Team" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EDSLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="breakDate">
+          <Key>
+            <PropertyRef Name="breakID" />
+          </Key>
+          <Property Name="breakID" Type="Int32" Nullable="false" />
+          <Property Name="seasonID" Type="Int32" />
+          <Property Name="breakDate1" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Season" Relationship="Self.FK__breakDate__seaso__5EBF139D" FromRole="breakDate" ToRole="Season" />
+        </EntityType>
+        <EntityType Name="Club">
+          <Key>
+            <PropertyRef Name="clubID" />
+          </Key>
+          <Property Name="clubID" Type="Int32" Nullable="false" />
+          <Property Name="leagueID" Type="Int32" />
+          <Property Name="clubName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="firstRegistered" Type="DateTime" Precision="0" />
+          <Property Name="pContact" Type="Int32" />
+          <Property Name="sContact" Type="Int32" />
+          <Property Name="location" Type="Int32" />
+          <NavigationProperty Name="Leauge" Relationship="Self.FK__Club__leagueID__5FB337D6" FromRole="Club" ToRole="Leauge" />
+          <NavigationProperty Name="Location1" Relationship="Self.FK__Club__location__628FA481" FromRole="Club" ToRole="Location" />
+          <NavigationProperty Name="Contact" Relationship="Self.FK__Club__pContact__60A75C0F" FromRole="Club" ToRole="Contact" />
+          <NavigationProperty Name="Contact1" Relationship="Self.FK__Club__sContact__619B8048" FromRole="Club" ToRole="Contact" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK__Location__homeCl__68487DD7" FromRole="Club" ToRole="Location" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK__Team__clubPID__70DDC3D8" FromRole="Club" ToRole="Team" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="contactID" />
+          </Key>
+          <Property Name="contactID" Type="Int32" Nullable="false" />
+          <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="postcode" Type="Int32" />
+          <Property Name="state" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Clubs" Relationship="Self.FK__Club__pContact__60A75C0F" FromRole="Contact" ToRole="Club" />
+          <NavigationProperty Name="Clubs1" Relationship="Self.FK__Club__sContact__619B8048" FromRole="Contact" ToRole="Club" />
+          <NavigationProperty Name="Leauges" Relationship="Self.FK__Leauge__pContact__6754599E" FromRole="Contact" ToRole="Leauge" />
+          <NavigationProperty Name="Players" Relationship="Self.FK__Player__eContact__6E01572D" FromRole="Contact" ToRole="Player" />
+          <NavigationProperty Name="Players1" Relationship="Self.FK__Player__pContact__6D0D32F4" FromRole="Contact" ToRole="Player" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK__Team__contact__72C60C4A" FromRole="Contact" ToRole="Team" />
+        </EntityType>
+        <EntityType Name="Division">
+          <Key>
+            <PropertyRef Name="divisionID" />
+          </Key>
+          <Property Name="divisionID" Type="Int32" Nullable="false" />
+          <Property Name="leagueID" Type="Int32" Nullable="false" />
+          <Property Name="divCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ageLimit" Type="Int32" />
+          <NavigationProperty Name="Leauge" Relationship="Self.FK__Division__league__6383C8BA" FromRole="Division" ToRole="Leauge" />
+          <NavigationProperty Name="Draws" Relationship="Self.FK__Draw__divisionID__656C112C" FromRole="Division" ToRole="Draw" />
+          <NavigationProperty Name="Ladders" Relationship="Self.FK__Ladder__divisonP__797309D9" FromRole="Division" ToRole="Ladder" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK__Team__divisionPI__71D1E811" FromRole="Division" ToRole="Team" />
+        </EntityType>
+        <EntityType Name="Draw">
+          <Key>
+            <PropertyRef Name="drawID" />
+          </Key>
+          <Property Name="drawID" Type="Int32" Nullable="false" />
+          <Property Name="seasonID" Type="Int32" Nullable="false" />
+          <Property Name="divisionID" Type="Int32" Nullable="false" />
+          <Property Name="numFinalTeams" Type="Int32" />
+          <Property Name="finalsDrawPID" Type="Int32" />
+          <NavigationProperty Name="Division" Relationship="Self.FK__Draw__divisionID__656C112C" FromRole="Draw" ToRole="Division" />
+          <NavigationProperty Name="Draw1" Relationship="Self.FK__Draw__finalsDraw__66603565" FromRole="Draw" ToRole="Draw1" />
+          <NavigationProperty Name="Draw2" Relationship="Self.FK__Draw__finalsDraw__66603565" FromRole="Draw1" ToRole="Draw" />
+          <NavigationProperty Name="Season" Relationship="Self.FK__Draw__seasonID__6477ECF3" FromRole="Draw" ToRole="Season" />
+          <NavigationProperty Name="Rounds" Relationship="Self.FK__Round__drawPID__6EF57B66" FromRole="Draw" ToRole="Round" />
+        </EntityType>
+        <EntityType Name="Ladder">
+          <Key>
+            <PropertyRef Name="LadderId" />
+          </Key>
+          <Property Name="LadderId" Type="Int32" Nullable="false" />
+          <Property Name="divisonPID" Type="Int32" />
+          <NavigationProperty Name="Division" Relationship="Self.FK__Ladder__divisonP__797309D9" FromRole="Ladder" ToRole="Division" />
+          <NavigationProperty Name="LadderPos" Relationship="Self.FK__LadderPos__Ladde__7A672E12" FromRole="Ladder" ToRole="LadderPos" />
+        </EntityType>
+        <EntityType Name="LadderPos">
+          <Key>
+            <PropertyRef Name="LadderPosId" />
+          </Key>
+          <Property Name="LadderPosId" Type="Int32" Nullable="false" />
+          <Property Name="LadderID" Type="Int32" Nullable="false" />
+          <Property Name="TeamID" Type="Int32" Nullable="false" />
+          <Property Name="Played" Type="Int32" Nullable="false" />
+          <Property Name="Wins" Type="Int32" Nullable="false" />
+          <Property Name="losses" Type="Int32" Nullable="false" />
+          <Property Name="draws" Type="Int32" Nullable="false" />
+          <Property Name="goalsFor" Type="Int32" Nullable="false" />
+          <Property Name="goalsAgainst" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ladder" Relationship="Self.FK__LadderPos__Ladde__7A672E12" FromRole="LadderPos" ToRole="Ladder" />
+          <NavigationProperty Name="Team" Relationship="Self.FK__LadderPos__TeamI__7B5B524B" FromRole="LadderPos" ToRole="Team" />
+        </EntityType>
+        <EntityType Name="Leauge">
+          <Key>
+            <PropertyRef Name="leagueID" />
+          </Key>
+          <Property Name="leagueID" Type="Int32" Nullable="false" />
+          <Property Name="leagueName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pContact" Type="Int32" />
+          <NavigationProperty Name="Clubs" Relationship="Self.FK__Club__leagueID__5FB337D6" FromRole="Leauge" ToRole="Club" />
+          <NavigationProperty Name="Contact" Relationship="Self.FK__Leauge__pContact__6754599E" FromRole="Leauge" ToRole="Contact" />
+          <NavigationProperty Name="Divisions" Relationship="Self.FK__Division__league__6383C8BA" FromRole="Leauge" ToRole="Division" />
+          <NavigationProperty Name="Seasons" Relationship="Self.FK__Season__leaguePI__6FE99F9F" FromRole="Leauge" ToRole="Season" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="groundID" />
+          </Key>
+          <Property Name="groundID" Type="Int32" Nullable="false" />
+          <Property Name="groundName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="addressLine1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="addressLine2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="postCode" Type="Int32" Nullable="false" />
+          <Property Name="suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="homeClub" Type="Int32" />
+          <NavigationProperty Name="Clubs" Relationship="Self.FK__Club__location__628FA481" FromRole="Location" ToRole="Club" />
+          <NavigationProperty Name="Club" Relationship="Self.FK__Location__homeCl__68487DD7" FromRole="Location" ToRole="Club" />
+        </EntityType>
+        <EntityType Name="Match">
+          <Key>
+            <PropertyRef Name="matchID" />
+          </Key>
+          <Property Name="matchID" Type="Int32" Nullable="false" />
+          <Property Name="roundPID" Type="Int32" Nullable="false" />
+          <Property Name="homeTeam" Type="Int32" />
+          <Property Name="awayTeam" Type="Int32" />
+          <Property Name="homeGoal" Type="Int32" />
+          <Property Name="awayGoal" Type="Int32" />
+          <NavigationProperty Name="Team" Relationship="Self.FK__Match__awayTeam__6B24EA82" FromRole="Match" ToRole="Team" />
+          <NavigationProperty Name="Team1" Relationship="Self.FK__Match__homeTeam__6A30C649" FromRole="Match" ToRole="Team" />
+          <NavigationProperty Name="Round" Relationship="Self.FK__Match__roundPID__693CA210" FromRole="Match" ToRole="Round" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="playerID" />
+          </Key>
+          <Property Name="playerID" Type="Int32" Nullable="false" />
+          <Property Name="teamPID" Type="Int32" Nullable="false" />
+          <Property Name="pContact" Type="Int32" Nullable="false" />
+          <Property Name="eContact" Type="Int32" />
+          <Property Name="firstRegistered" Type="DateTime" Precision="0" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Contact" Relationship="Self.FK__Player__eContact__6E01572D" FromRole="Player" ToRole="Contact" />
+          <NavigationProperty Name="Contact1" Relationship="Self.FK__Player__pContact__6D0D32F4" FromRole="Player" ToRole="Contact" />
+          <NavigationProperty Name="Team" Relationship="Self.FK__Player__teamPID__6C190EBB" FromRole="Player" ToRole="Team" />
+        </EntityType>
+        <EntityType Name="Round">
+          <Key>
+            <PropertyRef Name="roundID" />
+          </Key>
+          <Property Name="roundID" Type="Int32" Nullable="false" />
+          <Property Name="drawPID" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Draw" Relationship="Self.FK__Round__drawPID__6EF57B66" FromRole="Round" ToRole="Draw" />
+          <NavigationProperty Name="Matches" Relationship="Self.FK__Match__roundPID__693CA210" FromRole="Round" ToRole="Match" />
+        </EntityType>
+        <EntityType Name="Season">
+          <Key>
+            <PropertyRef Name="seasonID" />
+          </Key>
+          <Property Name="seasonID" Type="Int32" Nullable="false" />
+          <Property Name="leaguePID" Type="Int32" Nullable="false" />
+          <Property Name="seasonYear" Type="Int32" Nullable="false" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="length" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="breakDates" Relationship="Self.FK__breakDate__seaso__5EBF139D" FromRole="Season" ToRole="breakDate" />
+          <NavigationProperty Name="Draws" Relationship="Self.FK__Draw__seasonID__6477ECF3" FromRole="Season" ToRole="Draw" />
+          <NavigationProperty Name="Leauge" Relationship="Self.FK__Season__leaguePI__6FE99F9F" FromRole="Season" ToRole="Leauge" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="teamID" />
+          </Key>
+          <Property Name="teamID" Type="Int32" Nullable="false" />
+          <Property Name="clubPID" Type="Int32" Nullable="false" />
+          <Property Name="divisionPID" Type="Int32" />
+          <Property Name="teamName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contact" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Club" Relationship="Self.FK__Team__clubPID__70DDC3D8" FromRole="Team" ToRole="Club" />
+          <NavigationProperty Name="Contact1" Relationship="Self.FK__Team__contact__72C60C4A" FromRole="Team" ToRole="Contact" />
+          <NavigationProperty Name="Division" Relationship="Self.FK__Team__divisionPI__71D1E811" FromRole="Team" ToRole="Division" />
+          <NavigationProperty Name="LadderPos" Relationship="Self.FK__LadderPos__TeamI__7B5B524B" FromRole="Team" ToRole="LadderPos" />
+          <NavigationProperty Name="Matches" Relationship="Self.FK__Match__awayTeam__6B24EA82" FromRole="Team" ToRole="Match" />
+          <NavigationProperty Name="Matches1" Relationship="Self.FK__Match__homeTeam__6A30C649" FromRole="Team" ToRole="Match" />
+          <NavigationProperty Name="Players" Relationship="Self.FK__Player__teamPID__6C190EBB" FromRole="Team" ToRole="Player" />
+        </EntityType>
+        <Association Name="FK__breakDate__seaso__5EBF139D">
+          <End Role="Season" Type="Self.Season" Multiplicity="0..1" />
+          <End Role="breakDate" Type="Self.breakDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Season">
+              <PropertyRef Name="seasonID" />
+            </Principal>
+            <Dependent Role="breakDate">
+              <PropertyRef Name="seasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Club__leagueID__5FB337D6">
+          <End Role="Leauge" Type="Self.Leauge" Multiplicity="0..1" />
+          <End Role="Club" Type="Self.Club" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leauge">
+              <PropertyRef Name="leagueID" />
+            </Principal>
+            <Dependent Role="Club">
+              <PropertyRef Name="leagueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Club__location__628FA481">
+          <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+          <End Role="Club" Type="Self.Club" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="groundID" />
+            </Principal>
+            <Dependent Role="Club">
+              <PropertyRef Name="location" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Club__pContact__60A75C0F">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Club" Type="Self.Club" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Club">
+              <PropertyRef Name="pContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Club__sContact__619B8048">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Club" Type="Self.Club" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Club">
+              <PropertyRef Name="sContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Location__homeCl__68487DD7">
+          <End Role="Club" Type="Self.Club" Multiplicity="0..1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="clubID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="homeClub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team__clubPID__70DDC3D8">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="clubID" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="clubPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leauge__pContact__6754599E">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Leauge" Type="Self.Leauge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Leauge">
+              <PropertyRef Name="pContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Player__eContact__6E01572D">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="eContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Player__pContact__6D0D32F4">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="pContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team__contact__72C60C4A">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="contact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Division__league__6383C8BA">
+          <End Role="Leauge" Type="Self.Leauge" Multiplicity="1" />
+          <End Role="Division" Type="Self.Division" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leauge">
+              <PropertyRef Name="leagueID" />
+            </Principal>
+            <Dependent Role="Division">
+              <PropertyRef Name="leagueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Draw__divisionID__656C112C">
+          <End Role="Division" Type="Self.Division" Multiplicity="1" />
+          <End Role="Draw" Type="Self.Draw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="divisionID" />
+            </Principal>
+            <Dependent Role="Draw">
+              <PropertyRef Name="divisionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ladder__divisonP__797309D9">
+          <End Role="Division" Type="Self.Division" Multiplicity="0..1" />
+          <End Role="Ladder" Type="Self.Ladder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="divisionID" />
+            </Principal>
+            <Dependent Role="Ladder">
+              <PropertyRef Name="divisonPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team__divisionPI__71D1E811">
+          <End Role="Division" Type="Self.Division" Multiplicity="0..1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="divisionID" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="divisionPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Draw__finalsDraw__66603565">
+          <End Role="Draw" Type="Self.Draw" Multiplicity="0..1" />
+          <End Role="Draw1" Type="Self.Draw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Draw">
+              <PropertyRef Name="drawID" />
+            </Principal>
+            <Dependent Role="Draw1">
+              <PropertyRef Name="finalsDrawPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Draw__seasonID__6477ECF3">
+          <End Role="Season" Type="Self.Season" Multiplicity="1" />
+          <End Role="Draw" Type="Self.Draw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Season">
+              <PropertyRef Name="seasonID" />
+            </Principal>
+            <Dependent Role="Draw">
+              <PropertyRef Name="seasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Round__drawPID__6EF57B66">
+          <End Role="Draw" Type="Self.Draw" Multiplicity="1" />
+          <End Role="Round" Type="Self.Round" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Draw">
+              <PropertyRef Name="drawID" />
+            </Principal>
+            <Dependent Role="Round">
+              <PropertyRef Name="drawPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LadderPos__Ladde__7A672E12">
+          <End Role="Ladder" Type="Self.Ladder" Multiplicity="1" />
+          <End Role="LadderPos" Type="Self.LadderPos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ladder">
+              <PropertyRef Name="LadderId" />
+            </Principal>
+            <Dependent Role="LadderPos">
+              <PropertyRef Name="LadderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LadderPos__TeamI__7B5B524B">
+          <End Role="Team" Type="Self.Team" Multiplicity="1" />
+          <End Role="LadderPos" Type="Self.LadderPos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="LadderPos">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Season__leaguePI__6FE99F9F">
+          <End Role="Leauge" Type="Self.Leauge" Multiplicity="1" />
+          <End Role="Season" Type="Self.Season" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leauge">
+              <PropertyRef Name="leagueID" />
+            </Principal>
+            <Dependent Role="Season">
+              <PropertyRef Name="leaguePID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Match__awayTeam__6B24EA82">
+          <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+          <End Role="Match" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="awayTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Match__homeTeam__6A30C649">
+          <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+          <End Role="Match" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="homeTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Match__roundPID__693CA210">
+          <End Role="Round" Type="Self.Round" Multiplicity="1" />
+          <End Role="Match" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Round">
+              <PropertyRef Name="roundID" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="roundPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Player__teamPID__6C190EBB">
+          <End Role="Team" Type="Self.Team" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="teamPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EDSLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
+          <EntitySet Name="breakDates" EntityType="Self.breakDate" />
+          <EntitySet Name="Clubs" EntityType="Self.Club" />
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <EntitySet Name="Divisions" EntityType="Self.Division" />
+          <EntitySet Name="Draws" EntityType="Self.Draw" />
+          <EntitySet Name="Ladders" EntityType="Self.Ladder" />
+          <EntitySet Name="LadderPos" EntityType="Self.LadderPos" />
+          <EntitySet Name="Leauges" EntityType="Self.Leauge" />
+          <EntitySet Name="Locations" EntityType="Self.Location" />
+          <EntitySet Name="Matches" EntityType="Self.Match" />
+          <EntitySet Name="Players" EntityType="Self.Player" />
+          <EntitySet Name="Rounds" EntityType="Self.Round" />
+          <EntitySet Name="Seasons" EntityType="Self.Season" />
+          <EntitySet Name="Teams" EntityType="Self.Team" />
+          <AssociationSet Name="FK__breakDate__seaso__5EBF139D" Association="Self.FK__breakDate__seaso__5EBF139D">
+            <End Role="Season" EntitySet="Seasons" />
+            <End Role="breakDate" EntitySet="breakDates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Club__leagueID__5FB337D6" Association="Self.FK__Club__leagueID__5FB337D6">
+            <End Role="Leauge" EntitySet="Leauges" />
+            <End Role="Club" EntitySet="Clubs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Club__location__628FA481" Association="Self.FK__Club__location__628FA481">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Club" EntitySet="Clubs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Club__pContact__60A75C0F" Association="Self.FK__Club__pContact__60A75C0F">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Club" EntitySet="Clubs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Club__sContact__619B8048" Association="Self.FK__Club__sContact__619B8048">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Club" EntitySet="Clubs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Location__homeCl__68487DD7" Association="Self.FK__Location__homeCl__68487DD7">
+            <End Role="Club" EntitySet="Clubs" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team__clubPID__70DDC3D8" Association="Self.FK__Team__clubPID__70DDC3D8">
+            <End Role="Club" EntitySet="Clubs" />
+            <End Role="Team" EntitySet="Teams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leauge__pContact__6754599E" Association="Self.FK__Leauge__pContact__6754599E">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Leauge" EntitySet="Leauges" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Player__eContact__6E01572D" Association="Self.FK__Player__eContact__6E01572D">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Player" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Player__pContact__6D0D32F4" Association="Self.FK__Player__pContact__6D0D32F4">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Player" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team__contact__72C60C4A" Association="Self.FK__Team__contact__72C60C4A">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Team" EntitySet="Teams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Division__league__6383C8BA" Association="Self.FK__Division__league__6383C8BA">
+            <End Role="Leauge" EntitySet="Leauges" />
+            <End Role="Division" EntitySet="Divisions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Draw__divisionID__656C112C" Association="Self.FK__Draw__divisionID__656C112C">
+            <End Role="Division" EntitySet="Divisions" />
+            <End Role="Draw" EntitySet="Draws" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ladder__divisonP__797309D9" Association="Self.FK__Ladder__divisonP__797309D9">
+            <End Role="Division" EntitySet="Divisions" />
+            <End Role="Ladder" EntitySet="Ladders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team__divisionPI__71D1E811" Association="Self.FK__Team__divisionPI__71D1E811">
+            <End Role="Division" EntitySet="Divisions" />
+            <End Role="Team" EntitySet="Teams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Draw__finalsDraw__66603565" Association="Self.FK__Draw__finalsDraw__66603565">
+            <End Role="Draw" EntitySet="Draws" />
+            <End Role="Draw1" EntitySet="Draws" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Draw__seasonID__6477ECF3" Association="Self.FK__Draw__seasonID__6477ECF3">
+            <End Role="Season" EntitySet="Seasons" />
+            <End Role="Draw" EntitySet="Draws" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Round__drawPID__6EF57B66" Association="Self.FK__Round__drawPID__6EF57B66">
+            <End Role="Draw" EntitySet="Draws" />
+            <End Role="Round" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LadderPos__Ladde__7A672E12" Association="Self.FK__LadderPos__Ladde__7A672E12">
+            <End Role="Ladder" EntitySet="Ladders" />
+            <End Role="LadderPos" EntitySet="LadderPos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LadderPos__TeamI__7B5B524B" Association="Self.FK__LadderPos__TeamI__7B5B524B">
+            <End Role="Team" EntitySet="Teams" />
+            <End Role="LadderPos" EntitySet="LadderPos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Season__leaguePI__6FE99F9F" Association="Self.FK__Season__leaguePI__6FE99F9F">
+            <End Role="Leauge" EntitySet="Leauges" />
+            <End Role="Season" EntitySet="Seasons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Match__awayTeam__6B24EA82" Association="Self.FK__Match__awayTeam__6B24EA82">
+            <End Role="Team" EntitySet="Teams" />
+            <End Role="Match" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Match__homeTeam__6A30C649" Association="Self.FK__Match__homeTeam__6A30C649">
+            <End Role="Team" EntitySet="Teams" />
+            <End Role="Match" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Match__roundPID__693CA210" Association="Self.FK__Match__roundPID__693CA210">
+            <End Role="Round" EntitySet="Rounds" />
+            <End Role="Match" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Player__teamPID__6C190EBB" Association="Self.FK__Player__teamPID__6C190EBB">
+            <End Role="Team" EntitySet="Teams" />
+            <End Role="Player" EntitySet="Players" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EDSLModelStoreContainer" CdmEntityContainer="EDSLEntities">
+          <EntitySetMapping Name="C__RefactorLog">
+            <EntityTypeMapping TypeName="EDSLModel.C__RefactorLog">
+              <MappingFragment StoreEntitySet="__RefactorLog">
+                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="breakDates">
+            <EntityTypeMapping TypeName="EDSLModel.breakDate">
+              <MappingFragment StoreEntitySet="breakDate">
+                <ScalarProperty Name="breakID" ColumnName="breakID" />
+                <ScalarProperty Name="seasonID" ColumnName="seasonID" />
+                <ScalarProperty Name="breakDate1" ColumnName="breakDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clubs">
+            <EntityTypeMapping TypeName="EDSLModel.Club">
+              <MappingFragment StoreEntitySet="Club">
+                <ScalarProperty Name="clubID" ColumnName="clubID" />
+                <ScalarProperty Name="leagueID" ColumnName="leagueID" />
+                <ScalarProperty Name="clubName" ColumnName="clubName" />
+                <ScalarProperty Name="firstRegistered" ColumnName="firstRegistered" />
+                <ScalarProperty Name="pContact" ColumnName="pContact" />
+                <ScalarProperty Name="sContact" ColumnName="sContact" />
+                <ScalarProperty Name="location" ColumnName="location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="EDSLModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="contactID" ColumnName="contactID" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="lName" ColumnName="lName" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="suburb" ColumnName="suburb" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Divisions">
+            <EntityTypeMapping TypeName="EDSLModel.Division">
+              <MappingFragment StoreEntitySet="Division">
+                <ScalarProperty Name="divisionID" ColumnName="divisionID" />
+                <ScalarProperty Name="leagueID" ColumnName="leagueID" />
+                <ScalarProperty Name="divCode" ColumnName="divCode" />
+                <ScalarProperty Name="ageLimit" ColumnName="ageLimit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Draws">
+            <EntityTypeMapping TypeName="EDSLModel.Draw">
+              <MappingFragment StoreEntitySet="Draw">
+                <ScalarProperty Name="drawID" ColumnName="drawID" />
+                <ScalarProperty Name="seasonID" ColumnName="seasonID" />
+                <ScalarProperty Name="divisionID" ColumnName="divisionID" />
+                <ScalarProperty Name="numFinalTeams" ColumnName="numFinalTeams" />
+                <ScalarProperty Name="finalsDrawPID" ColumnName="finalsDrawPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ladders">
+            <EntityTypeMapping TypeName="EDSLModel.Ladder">
+              <MappingFragment StoreEntitySet="Ladder">
+                <ScalarProperty Name="LadderId" ColumnName="LadderId" />
+                <ScalarProperty Name="divisonPID" ColumnName="divisonPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LadderPos">
+            <EntityTypeMapping TypeName="EDSLModel.LadderPos">
+              <MappingFragment StoreEntitySet="LadderPos">
+                <ScalarProperty Name="LadderPosId" ColumnName="LadderPosId" />
+                <ScalarProperty Name="LadderID" ColumnName="LadderID" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="Played" ColumnName="Played" />
+                <ScalarProperty Name="Wins" ColumnName="Wins" />
+                <ScalarProperty Name="losses" ColumnName="losses" />
+                <ScalarProperty Name="draws" ColumnName="draws" />
+                <ScalarProperty Name="goalsFor" ColumnName="goalsFor" />
+                <ScalarProperty Name="goalsAgainst" ColumnName="goalsAgainst" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leauges">
+            <EntityTypeMapping TypeName="EDSLModel.Leauge">
+              <MappingFragment StoreEntitySet="Leauge">
+                <ScalarProperty Name="leagueID" ColumnName="leagueID" />
+                <ScalarProperty Name="leagueName" ColumnName="leagueName" />
+                <ScalarProperty Name="pContact" ColumnName="pContact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="EDSLModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="groundID" ColumnName="groundID" />
+                <ScalarProperty Name="groundName" ColumnName="groundName" />
+                <ScalarProperty Name="addressLine1" ColumnName="addressLine1" />
+                <ScalarProperty Name="addressLine2" ColumnName="addressLine2" />
+                <ScalarProperty Name="postCode" ColumnName="postCode" />
+                <ScalarProperty Name="suburb" ColumnName="suburb" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="homeClub" ColumnName="homeClub" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Matches">
+            <EntityTypeMapping TypeName="EDSLModel.Match">
+              <MappingFragment StoreEntitySet="Match">
+                <ScalarProperty Name="matchID" ColumnName="matchID" />
+                <ScalarProperty Name="roundPID" ColumnName="roundPID" />
+                <ScalarProperty Name="homeTeam" ColumnName="homeTeam" />
+                <ScalarProperty Name="awayTeam" ColumnName="awayTeam" />
+                <ScalarProperty Name="homeGoal" ColumnName="homeGoal" />
+                <ScalarProperty Name="awayGoal" ColumnName="awayGoal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="EDSLModel.Player">
+              <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="playerID" ColumnName="playerID" />
+                <ScalarProperty Name="teamPID" ColumnName="teamPID" />
+                <ScalarProperty Name="pContact" ColumnName="pContact" />
+                <ScalarProperty Name="eContact" ColumnName="eContact" />
+                <ScalarProperty Name="firstRegistered" ColumnName="firstRegistered" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rounds">
+            <EntityTypeMapping TypeName="EDSLModel.Round">
+              <MappingFragment StoreEntitySet="Round">
+                <ScalarProperty Name="roundID" ColumnName="roundID" />
+                <ScalarProperty Name="drawPID" ColumnName="drawPID" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seasons">
+            <EntityTypeMapping TypeName="EDSLModel.Season">
+              <MappingFragment StoreEntitySet="Season">
+                <ScalarProperty Name="seasonID" ColumnName="seasonID" />
+                <ScalarProperty Name="leaguePID" ColumnName="leaguePID" />
+                <ScalarProperty Name="seasonYear" ColumnName="seasonYear" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="length" ColumnName="length" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="EDSLModel.Team">
+              <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="teamID" ColumnName="teamID" />
+                <ScalarProperty Name="clubPID" ColumnName="clubPID" />
+                <ScalarProperty Name="divisionPID" ColumnName="divisionPID" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="contact" ColumnName="contact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

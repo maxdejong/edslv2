@@ -14,8 +14,18 @@ namespace EDSL_API.Models
     
     public partial class Round
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Round()
+        {
+            this.Matches = new HashSet<Match>();
+        }
+    
         public int roundID { get; set; }
         public int drawPID { get; set; }
         public Nullable<System.DateTime> date { get; set; }
+    
+        public virtual Draw Draw { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Match> Matches { get; set; }
     }
 }

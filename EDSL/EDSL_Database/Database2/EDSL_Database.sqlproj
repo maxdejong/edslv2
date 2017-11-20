@@ -71,6 +71,8 @@
     <Build Include="Player.sql" />
     <Build Include="Contact.sql" />
     <Build Include="Match.sql" />
+    <Build Include="Ladder.sql" />
+    <Build Include="LadderPos.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="NewSQLDatabase%28EDSL).refactorlog" />

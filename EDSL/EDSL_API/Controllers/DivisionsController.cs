@@ -14,7 +14,7 @@ namespace EDSL_API.Controllers
 {
     public class DivisionsController : ApiController
     {
-        private EDSL_dbEntities db = new EDSL_dbEntities();
+        private EDSLEntities db = new EDSLEntities();
 
         // GET: api/Divisions
         public IQueryable<Division> GetDivisions()
@@ -44,7 +44,7 @@ namespace EDSL_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != division.divID)
+            if (id != division.divisionID)
             {
                 return BadRequest();
             }
@@ -87,7 +87,7 @@ namespace EDSL_API.Controllers
             }
             catch (DbUpdateException)
             {
-                if (DivisionExists(division.divID))
+                if (DivisionExists(division.divisionID))
                 {
                     return Conflict();
                 }
@@ -97,7 +97,7 @@ namespace EDSL_API.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = division.divID }, division);
+            return CreatedAtRoute("DefaultApi", new { id = division.divisionID }, division);
         }
 
         // DELETE: api/Divisions/5
@@ -127,7 +127,7 @@ namespace EDSL_API.Controllers
 
         private bool DivisionExists(int id)
         {
-            return db.Divisions.Count(e => e.divID == id) > 0;
+            return db.Divisions.Count(e => e.divisionID == id) > 0;
         }
     }
 }

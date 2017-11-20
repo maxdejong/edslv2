@@ -16,9 +16,13 @@ namespace EDSL_API.Models
     {
         public int matchID { get; set; }
         public int roundPID { get; set; }
-        public string homeTeam { get; set; }
-        public string awayTeam { get; set; }
+        public Nullable<int> homeTeam { get; set; }
+        public Nullable<int> awayTeam { get; set; }
         public Nullable<int> homeGoal { get; set; }
         public Nullable<int> awayGoal { get; set; }
+    
+        public virtual Team Team { get; set; }
+        public virtual Team Team1 { get; set; }
+        public virtual Round Round { get; set; }
     }
 }
